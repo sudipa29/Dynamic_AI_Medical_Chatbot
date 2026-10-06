@@ -1,0 +1,60 @@
+question,intent,answer
+What is your refund policy?,refund,Refunds can be requested within 7 days of purchase.
+I want my money back,refund,You can request a refund within 7 days of purchase by contacting customer support.
+How do I get a refund?,refund,You can request a refund within 7 days of purchase by contacting customer support.
+How can I request a refund?,refund,You can request a refund within 7 days of purchase by contacting customer support.
+Can I get a refund?,refund,Refunds can be requested within 7 days of purchase.
+I need a refund,refund,You can request a refund within 7 days of purchase by contacting customer support.
+How long does a refund take?,refund,Refunds are usually processed within 5 to 7 business days after approval.
+When will I receive my refund?,refund,Refunds are usually processed within 5 to 7 business days after approval.
+How many days does a refund take?,refund,Refunds are usually processed within 5 to 7 business days after approval.
+How long does delivery take?,delivery,Standard delivery usually takes 3 to 5 business days.
+When will my package arrive?,delivery,Standard delivery usually takes 3 to 5 business days.
+When should I expect my delivery?,delivery,Standard delivery usually takes 3 to 5 business days.
+How many days does delivery take?,delivery,Standard delivery usually takes 3 to 5 business days.
+When will my order arrive?,delivery,Standard delivery usually takes 3 to 5 business days.
+What are your delivery hours?,delivery,Delivery is available Monday to Saturday during business hours.
+Can I cancel my order?,order_cancel,Orders can be cancelled if they have not yet been shipped.
+I want to cancel my order,order_cancel,Orders can be cancelled if they have not yet been shipped.
+Can I stop my order?,order_cancel,Orders can be cancelled if they have not yet been shipped.
+How can I cancel my order?,order_cancel,Orders can be cancelled if they have not yet been shipped.
+How can I track my order?,order_status,You can track your order using the order tracking option with your order ID.
+Where is my order?,order_status,You can track your order using the order tracking option with your order ID.
+Where is my package?,order_status,You can track your order using the order tracking option with your order ID.
+Can I track my package?,order_status,You can track your order using the order tracking option with your order ID.
+How do I track my order?,order_status,You can track your order using the order tracking option with your order ID.
+I want to return something,order_return,"Yes, products can be returned according to our return policy."
+Can I return a product?,order_return,"Yes, products can be returned according to our return policy."
+How do I return a product?,order_return,"Yes, products can be returned according to our return policy."
+I need to return my order,order_return,"Yes, products can be returned according to our return policy."
+Can I return my item?,order_return,"Yes, products can be returned according to our return policy."
+My payment did not work,payment_failed,Please verify your payment details and try again. If the issue continues contact support.
+What should I do if my payment fails?,payment_failed,Please verify your payment details and try again. If the issue continues contact support.
+My payment failed,payment_failed,Please verify your payment details and try again. If the issue continues contact support.
+Why did my payment fail?,payment_failed,Please verify your payment details and try again. If the issue continues contact support.
+I cannot make a payment,payment_failed,Please verify your payment details and try again. If the issue continues contact support.
+What payment methods do you accept?,payment_issue,"We accept major debit cards, credit cards, and supported online payment methods."
+Which payment methods are accepted?,payment_issue,"We accept major debit cards, credit cards, and supported online payment methods."
+Can I pay with a debit card?,payment_issue,"We accept major debit cards, credit cards, and supported online payment methods."
+Can I pay with a credit card?,payment_issue,"We accept major debit cards, credit cards, and supported online payment methods."
+What methods of payment can I use?,payment_issue,"We accept major debit cards, credit cards, and supported online payment methods."
+How can I contact support?,account_issue,You can contact support through the customer support section.
+Can I change my account password?,account_issue,"Yes, you can change your password from the account settings page."
+How can I update my account information?,account_issue,You can update your account information from your account settings.
+How do I change my password?,account_issue,"Yes, you can change your password from the account settings page."
+Where can I update my account details?,account_issue,You can update your account information from your account settings.
+Can I get product information?,product_info,"Yes, product details and specifications are available through the product information section."
+Tell me about this product,product_info,"Yes, product details and specifications are available through the product information section."
+Where can I find product details?,product_info,"Yes, product details and specifications are available through the product information section."
+What are the product specifications?,product_info,"Yes, product details and specifications are available through the product information section."
+I need information about a product,product_info,"Yes, product details and specifications are available through the product information section."
+What should I do if I receive a damaged product?,order_return,Please contact support and provide your order details so the issue can be reviewed.
+My product arrived damaged,order_return,Please contact support and provide your order details so the issue can be reviewed.
+I received a damaged item,order_return,Please contact support and provide your order details so the issue can be reviewed.
+My order arrived damaged,order_return,Please contact support and provide your order details so the issue can be reviewed.
+The product I received is damaged,order_return,Please contact support and provide your order details so the issue can be reviewed.
+How can I provide feedback?,feedback,You can provide feedback through the customer feedback option.
+I want to give feedback,feedback,You can provide feedback through the customer feedback option.
+Where can I submit feedback?,feedback,You can provide feedback through the customer feedback option.
+How do I leave feedback?,feedback,You can provide feedback through the customer feedback option.
+Can I share my feedback?,feedback,You can provide feedback through the customer feedback option.

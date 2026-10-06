@@ -1,0 +1,376 @@
+text,intent
+Hello,greeting
+Hi,greeting
+Hey,greeting
+Hello there,greeting
+Hi there,greeting
+Good morning,greeting
+Good afternoon,greeting
+Good evening,greeting
+"Hey, I need some help",greeting
+Can you help me?,greeting
+I need assistance,greeting
+Is anyone there?,greeting
+Hello support,greeting
+Hi support team,greeting
+Hey there,greeting
+Good day,greeting
+Can someone help me?,greeting
+I want to speak with support,greeting
+I need help with something,greeting
+Can you assist me?,greeting
+"Hello, I have a question",greeting
+"Hi, I have a question",greeting
+Hey support,greeting
+Greetings,greeting
+I would like some help,greeting
+Where is my order?,order_status
+Where is my package?,order_status
+Can you track my order?,order_status
+I want to check my order status,order_status
+What is the status of my order?,order_status
+Can you tell me where my package is?,order_status
+I haven't received my order yet,order_status
+Track my package,order_status
+Can I track my shipment?,order_status
+Where is my shipment?,order_status
+I want to know where my order is,order_status
+Has my order been shipped?,order_status
+Can you check my order?,order_status
+What happened to my order?,order_status
+My order hasn't arrived,order_status
+I need to track an order,order_status
+Please check my order status,order_status
+Can you locate my package?,order_status
+What is happening with my shipment?,order_status
+Is my order on the way?,order_status
+Can you give me an update on my order?,order_status
+I need an update about my package,order_status
+Where can I see my order?,order_status
+How do I track my order?,order_status
+Please tell me my order status,order_status
+I want to cancel my order,order_cancel
+Please cancel my order,order_cancel
+Can I cancel my order?,order_cancel
+I don't want my order anymore,order_cancel
+Cancel my purchase,order_cancel
+I need to cancel an order,order_cancel
+Please stop my order,order_cancel
+Can you cancel the order I placed?,order_cancel
+I changed my mind and want to cancel,order_cancel
+How can I cancel my order?,order_cancel
+I want to stop the delivery,order_cancel
+Please cancel my purchase,order_cancel
+Is it possible to cancel an order?,order_cancel
+I no longer need this order,order_cancel
+Can you help me cancel an order?,order_cancel
+I want to withdraw my order,order_cancel
+Please stop processing my order,order_cancel
+Can I cancel a recent order?,order_cancel
+I placed an order by mistake,order_cancel
+I don't need the product anymore,order_cancel
+Please cancel the purchase I made,order_cancel
+I want my order cancelled,order_cancel
+Can you stop my order?,order_cancel
+I need to cancel something I ordered,order_cancel
+Please cancel the order I placed yesterday,order_cancel
+I want a refund,refund
+I need my money back,refund
+How can I get a refund?,refund
+Please refund my payment,refund
+Can I get my money back?,refund
+I want to request a refund,refund
+How do I request a refund?,refund
+I need a refund for my order,refund
+Please process my refund,refund
+When will I get my refund?,refund
+I want to return something and get a refund,refund
+Can you help me get a refund?,refund
+I was charged and want a refund,refund
+What is the refund process?,refund
+Tell me about your refund policy,refund
+How long does a refund take?,refund
+I need my payment refunded,refund
+Can I request my money back?,refund
+Please return my money,refund
+I want a refund for this purchase,refund
+How do refunds work?,refund
+Can you process a refund for me?,refund
+I would like to request a refund,refund
+My purchase needs to be refunded,refund
+I need help with a refund,refund
+My payment failed,payment_failed
+My card payment failed,payment_failed
+The payment did not go through,payment_failed
+Why did my payment fail?,payment_failed
+I couldn't complete the payment,payment_failed
+My card was declined,payment_failed
+The transaction failed,payment_failed
+Payment was unsuccessful,payment_failed
+I cannot make a payment,payment_failed
+My payment isn't working,payment_failed
+The card payment didn't work,payment_failed
+I tried paying but it failed,payment_failed
+Why was my card declined?,payment_failed
+The payment was rejected,payment_failed
+My transaction was declined,payment_failed
+I am unable to pay,payment_failed
+The payment keeps failing,payment_failed
+I can't complete my purchase,payment_failed
+My payment attempt failed,payment_failed
+The checkout payment failed,payment_failed
+My debit card payment failed,payment_failed
+My credit card was declined,payment_failed
+The payment system rejected my payment,payment_failed
+I received a payment failure,payment_failed
+I am having trouble completing payment,payment_failed
+Money was deducted but my order wasn't created,payment_issue
+I was charged but didn't receive an order,payment_issue
+My account was charged incorrectly,payment_issue
+I was charged twice,payment_issue
+Why was I charged twice?,payment_issue
+The payment went through but my order is missing,payment_issue
+Money was taken from my account,payment_issue
+I was charged but the order failed,payment_issue
+There is a problem with my payment,payment_issue
+I have a payment problem,payment_issue
+My payment was successful but no order was created,payment_issue
+The money was deducted from my account,payment_issue
+I see an unexpected charge,payment_issue
+I was charged for something I didn't receive,payment_issue
+Why did I get charged?,payment_issue
+There is an incorrect charge on my account,payment_issue
+My card was charged twice,payment_issue
+The amount was deducted but my order is not showing,payment_issue
+I paid but cannot see my order,payment_issue
+I have an issue with a transaction,payment_issue
+There is a problem with the amount I was charged,payment_issue
+My payment was taken but the order disappeared,payment_issue
+I was charged the wrong amount,payment_issue
+The payment amount is incorrect,payment_issue
+I need help with a payment problem,payment_issue
+When will my order arrive?,delivery
+How long does delivery take?,delivery
+When can I expect my package?,delivery
+What is the delivery time?,delivery
+How many days does shipping take?,delivery
+When will my package arrive?,delivery
+How long will shipping take?,delivery
+What are your delivery times?,delivery
+When should I expect delivery?,delivery
+How soon will my order arrive?,delivery
+What is the expected delivery date?,delivery
+Can you tell me the delivery time?,delivery
+When will my shipment arrive?,delivery
+How fast is delivery?,delivery
+How long does shipping usually take?,delivery
+What are the shipping times?,delivery
+When can my order be delivered?,delivery
+How soon can you deliver my order?,delivery
+What is the estimated delivery time?,delivery
+When should my package be delivered?,delivery
+How long until my package arrives?,delivery
+Can I know the expected arrival date?,delivery
+How many days until delivery?,delivery
+What is the estimated shipping time?,delivery
+Tell me when my order will arrive,delivery
+Tell me about this product,product_info
+What is this product?,product_info
+Can you give me product details?,product_info
+I want information about this item,product_info
+What are the features of this product?,product_info
+Can you explain this product?,product_info
+What does this product do?,product_info
+I need more information about the item,product_info
+Can you describe this product?,product_info
+What are the specifications?,product_info
+Tell me more about this item,product_info
+What is included with the product?,product_info
+Does this product have any features?,product_info
+Can I get details about this item?,product_info
+I want to know more about the product,product_info
+What are the product specifications?,product_info
+Please provide product information,product_info
+Can you tell me about this item?,product_info
+I need details about a product,product_info
+What does this item include?,product_info
+Give me information about the product,product_info
+Can you explain the product features?,product_info
+What should I know about this product?,product_info
+I have a question about a product,product_info
+I want product details,product_info
+I have a complaint,complaint
+I want to make a complaint,complaint
+I am unhappy with your service,complaint
+Your service was disappointing,complaint
+I am not satisfied,complaint
+I want to report a problem,complaint
+I have a problem with my order,complaint
+I am unhappy with my order,complaint
+This service is unacceptable,complaint
+I want to complain about my experience,complaint
+I am disappointed with the service,complaint
+I had a bad experience,complaint
+I want to report an issue,complaint
+I am not happy with my purchase,complaint
+My experience was terrible,complaint
+I am dissatisfied with the service,complaint
+I want to raise a complaint,complaint
+I need to report a problem with my order,complaint
+This is not acceptable,complaint
+I am frustrated with the service,complaint
+I am unhappy about what happened,complaint
+I want to speak about a complaint,complaint
+I have an issue that I want to complain about,complaint
+Please register my complaint,complaint
+I need help with a complaint,complaint
+Thank you,thank_you
+Thanks,thank_you
+Thanks a lot,thank_you
+Thank you so much,thank_you
+I appreciate your help,thank_you
+Thanks for your assistance,thank_you
+Thank you for helping me,thank_you
+I appreciate it,thank_you
+"That was helpful, thank you",thank_you
+Thanks for the support,thank_you
+Thank you for your response,thank_you
+Many thanks,thank_you
+I am grateful for your help,thank_you
+Thanks for resolving this,thank_you
+Thank you for your assistance,thank_you
+I really appreciate your help,thank_you
+Thanks for answering my question,thank_you
+Thank you for the information,thank_you
+"That helps a lot, thank you",thank_you
+Thanks for your time,thank_you
+I appreciate the support,thank_you
+Thank you very much,thank_you
+Thanks for helping me,thank_you
+I am thankful for your help,thank_you
+"Thanks, I appreciate it",thank_you
+Bye,goodbye
+Goodbye,goodbye
+See you later,goodbye
+Talk to you later,goodbye
+I have to go,goodbye
+Bye for now,goodbye
+See you soon,goodbye
+I am leaving now,goodbye
+Have a good day,goodbye
+"Thanks, goodbye",goodbye
+"That is all, goodbye",goodbye
+I don't need anything else,goodbye
+I am done,goodbye
+End the conversation,goodbye
+I will talk to you later,goodbye
+Good night,goodbye
+Have a nice day,goodbye
+See you next time,goodbye
+I am finished,goodbye
+That's all for now,goodbye
+I will come back later,goodbye
+We can stop here,goodbye
+I am done with my questions,goodbye
+No more questions,goodbye
+Take care,goodbye
+I cannot access my account,account_issue
+I forgot my password,account_issue
+I cannot log in,account_issue
+My account is locked,account_issue
+I am having trouble logging in,account_issue
+I forgot my login details,account_issue
+Why can't I access my account?,account_issue
+My account is not working,account_issue
+I cannot sign in,account_issue
+I need help with my account,account_issue
+I lost access to my account,account_issue
+How can I reset my password?,account_issue
+I need to change my password,account_issue
+My login is not working,account_issue
+I am locked out of my account,account_issue
+Can you help me access my account?,account_issue
+I cannot get into my account,account_issue
+I have an account problem,account_issue
+My password does not work,account_issue
+I need help logging in,account_issue
+Why am I unable to sign in?,account_issue
+I cannot remember my password,account_issue
+My account access is blocked,account_issue
+Please help me recover my account,account_issue
+I have trouble accessing my account,account_issue
+I want to return my order,order_return
+How can I return a product?,order_return
+I need to return an item,order_return
+Can I return my purchase?,order_return
+I want to send this product back,order_return
+How do I return my order?,order_return
+I received the wrong item and want to return it,order_return
+The product is damaged and I want to return it,order_return
+Can I return something I bought?,order_return
+What is your return policy?,order_return
+How long do I have to return an item?,order_return
+Where can I request a return?,order_return
+I need a return label,order_return
+Can you help me return this item?,order_return
+I want to send my order back,order_return
+How can I request a product return?,order_return
+I received a damaged product,order_return
+The item I received is wrong,order_return
+I don't want this product and want to return it,order_return
+Can I send the item back?,order_return
+Please help me with a return,order_return
+I need to return something I ordered,order_return
+How does the return process work?,order_return
+I want to return a damaged item,order_return
+Can I return this product?,order_return
+I have a suggestion,feedback
+I want to give feedback,feedback
+Can I provide some feedback?,feedback
+I would like to share my feedback,feedback
+I have some suggestions,feedback
+I want to suggest an improvement,feedback
+Here is my feedback,feedback
+I want to tell you what I think,feedback
+Can I leave feedback?,feedback
+I have a suggestion for your service,feedback
+I want to give you some suggestions,feedback
+I would like to comment on the service,feedback
+I have some feedback about my experience,feedback
+I want to share my experience,feedback
+Can I make a suggestion?,feedback
+I have an idea to improve the service,feedback
+I would like to provide a suggestion,feedback
+Here is something you could improve,feedback
+I want to suggest something,feedback
+I have some comments about the service,feedback
+I would like to give you my opinion,feedback
+Can I share a suggestion?,feedback
+I have feedback about my order,feedback
+I want to comment on my experience,feedback
+I would like to share some feedback,feedback
+What is the weather today?,unknown
+Tell me a joke,unknown
+Who is the president?,unknown
+What is Python?,unknown
+Explain quantum physics,unknown
+What is the capital of France?,unknown
+Tell me a story,unknown
+How does a car work?,unknown
+What is machine learning?,unknown
+Who invented the telephone?,unknown
+What is the tallest mountain?,unknown
+Tell me about space,unknown
+What is artificial intelligence?,unknown
+Who wrote Harry Potter?,unknown
+What is the meaning of life?,unknown
+Tell me a fun fact,unknown
+What is blockchain?,unknown
+How does electricity work?,unknown
+What is the population of India?,unknown
+Tell me about dinosaurs,unknown
+What is the speed of light?,unknown
+Who discovered gravity?,unknown
+Explain photosynthesis,unknown
+What is a black hole?,unknown
+Tell me something interesting,unknown

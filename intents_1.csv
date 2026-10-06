@@ -1,0 +1,151 @@
+text,intent
+Hello,greeting
+Hi,greeting
+Hi there,greeting
+Hello chatbot,greeting
+Good morning,greeting
+Good afternoon,greeting
+Hey,greeting
+Hey there,greeting
+How are you,greeting
+Nice to meet you,greeting
+Where is my order?,order_status
+Where is my package?,order_status
+Track my order,order_status
+I want to track my order,order_status
+What is my order status?,order_status
+Can you check my order?,order_status
+Tell me where my order is,order_status
+Has my order been shipped?,order_status
+Can I track my package?,order_status
+I haven't received my order,order_status
+I want to cancel my order,order_cancel
+Cancel my order,order_cancel
+I need to cancel my order,order_cancel
+Can I cancel my order?,order_cancel
+Please cancel my order,order_cancel
+I don't want my order anymore,order_cancel
+How can I cancel an order?,order_cancel
+I want to stop my order,order_cancel
+Please stop my order,order_cancel
+Can you cancel the order?,order_cancel
+I want a refund,refund
+How can I get a refund?,refund
+I want my money back,refund
+Please give me a refund,refund
+How do I request a refund?,refund
+Can I get my money back?,refund
+I need a refund,refund
+I want to return my money,refund
+What is the refund process?,refund
+Tell me about refunds,refund
+My payment failed,payment_failed
+Payment didn't work,payment_failed
+My payment was unsuccessful,payment_failed
+I couldn't complete the payment,payment_failed
+Why did my payment fail?,payment_failed
+The payment failed,payment_failed
+My card payment failed,payment_failed
+Payment is not going through,payment_failed
+I cannot make the payment,payment_failed
+The transaction failed,payment_failed
+Money was deducted but my order wasn't created,payment_issue
+I was charged but didn't receive an order,payment_issue
+Money was taken from my account,payment_issue
+My payment was deducted,payment_issue
+I was charged but the order failed,payment_issue
+The amount was deducted,payment_issue
+Payment succeeded but order was not created,payment_issue
+Money was debited but no order,payment_issue
+I was charged twice,payment_issue
+I have a payment problem,payment_issue
+When will my order arrive?,delivery
+How long does delivery take?,delivery
+When can I expect my order?,delivery
+What is the delivery time?,delivery
+How many days will delivery take?,delivery
+When will my package arrive?,delivery
+Tell me the delivery time,delivery
+How long until my order arrives?,delivery
+When should I expect my package?,delivery
+What are your delivery timings?,delivery
+Tell me about this product,product_info
+What is this product?,product_info
+Can you provide product information?,product_info
+I need information about a product,product_info
+Tell me more about this item,product_info
+What features does this product have?,product_info
+Is this product available?,product_info
+Do you have this product?,product_info
+Can I get details about the product?,product_info
+I want to know about an item,product_info
+I have a complaint,complaint
+I want to complain,complaint
+I am unhappy with your service,complaint
+I have an issue,complaint
+Your service is disappointing,complaint
+I want to report a problem,complaint
+I am not satisfied,complaint
+I have a problem with my order,complaint
+I want to raise a complaint,complaint
+I am unhappy,complaint
+Thank you,thank_you
+Thanks,thank_you
+Thanks for your help,thank_you
+Thank you very much,thank_you
+I appreciate your help,thank_you
+That's helpful,thank_you
+Thanks a lot,thank_you
+I appreciate it,thank_you
+"Great, thank you",thank_you
+Thank you for helping me,thank_you
+Bye,goodbye
+Goodbye,goodbye
+See you later,goodbye
+Talk to you later,goodbye
+I am leaving,goodbye
+That's all,goodbye
+Have a good day,goodbye
+See you,goodbye
+Bye for now,goodbye
+Good night,goodbye
+I cannot login,account_issue
+I forgot my password,account_issue
+I can't access my account,account_issue
+My account is locked,account_issue
+I have trouble logging in,account_issue
+I cannot access my account,account_issue
+My login isn't working,account_issue
+I can't sign in,account_issue
+I have an account problem,account_issue
+Help me with my account,account_issue
+I want to return my order,order_return
+How can I return a product?,order_return
+I want to return an item,order_return
+Can I return my order?,order_return
+How do I return a product?,order_return
+I received the wrong product,order_return
+I want to send the product back,order_return
+How can I request a return?,order_return
+Can I return this item?,order_return
+I need to return something,order_return
+I want to give feedback,feedback
+How can I provide feedback?,feedback
+I want to share my feedback,feedback
+I have feedback,feedback
+Where can I leave feedback?,feedback
+I want to review your service,feedback
+I want to provide a suggestion,feedback
+I have a suggestion,feedback
+Can I give you feedback?,feedback
+I want to tell you about my experience,feedback
+What is the weather today?,unknown
+Tell me a joke,unknown
+Who is the president?,unknown
+What is Python?,unknown
+Explain quantum physics,unknown
+What is the capital of France?,unknown
+Tell me a story,unknown
+How does a car work?,unknown
+What is machine learning?,unknown
+Who invented the telephone?,unknown

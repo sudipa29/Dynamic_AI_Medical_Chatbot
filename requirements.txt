@@ -1,0 +1,15 @@
+Flask
+python-dotenv
+openai
+pandas
+numpy
+scikit-learn
+nltk
+spacy
+textblob
+vaderSentiment
+google-generativeai
+markdown
+bleach
+requests
+pytest

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+```
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>{{ app_name }}</title>
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}"
+>
+```
+
+</head>
+
+<body>
+
+```
+<main class="welcome-container">
+
+    <section class="welcome-card">
+
+        <div class="logo">
+            ✦
+        </div>
+
+        <h1>
+            {{ app_name }}
+        </h1>
+
+        <p class="subtitle">
+            Intelligent Conversational & Analytics Platform
+        </p>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            Application is running
+        </div>
+
+        <p class="version">
+            Version {{ app_version }}
+        </p>
+
+    </section>
+
+</main>
+
+<script
+    src="{{ url_for('static', filename='js/app.js') }}"
+></script>
+```
+
+</body>
+</html>

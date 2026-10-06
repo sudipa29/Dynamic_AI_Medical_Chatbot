@@ -1,0 +1,46 @@
+# Virtual Environment
+
+.venv/
+venv/
+env/
+
+# Environment Variables
+
+.env
+.env.*
+
+# Python Cache
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+# Testing
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+
+.vscode/
+.idea/
+
+# Operating System
+
+.DS_Store
+Thumbs.db
+
+# Generated Files
+
+exports/*
+data/processed/*
+
+# Logs
+
+*.log
+
+# Temporary Files
+
+*.tmp
+*.temp
