@@ -1,0 +1,11 @@
+,precision,recall,f1-score,support
+definition,1.0,1.0,1.0,100.0
+symptoms,1.0,1.0,1.0,100.0
+causes_risk_factors,1.0,1.0,1.0,100.0
+prevention,1.0,1.0,1.0,100.0
+diagnosis_tests,1.0,1.0,1.0,100.0
+general_management,1.0,1.0,1.0,100.0
+when_to_seek_care,1.0,1.0,1.0,100.0
+accuracy,1.0,1.0,1.0,1.0
+macro avg,1.0,1.0,1.0,700.0
+weighted avg,1.0,1.0,1.0,700.0

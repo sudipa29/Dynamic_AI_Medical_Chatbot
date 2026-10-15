@@ -1,0 +1,701 @@
+text,actual_intent,predicted_intent,correct
+how can a doctor determine whether someone has dehydration,diagnosis_tests,diagnosis_tests,True
+help me understand depression,definition,definition,True
+what steps may help prevent high cholesterol,prevention,prevention,True
+why do people get kidney stones,causes_risk_factors,causes_risk_factors,True
+when should i get medical advice about pneumonia,when_to_seek_care,when_to_seek_care,True
+tell me the basics of migraine,definition,definition,True
+what preventive measures are useful for kidney stones,prevention,prevention,True
+how do clinicians assess possible migraine,diagnosis_tests,diagnosis_tests,True
+can i get an introduction to influenza,definition,definition,True
+can lifestyle changes help prevent dehydration,prevention,prevention,True
+what are the possible causes of high cholesterol,causes_risk_factors,causes_risk_factors,True
+what is meant by the condition called thyroid disorders,definition,definition,True
+what steps can help protect against kidney stones,prevention,prevention,True
+what are the possible causes of common cold,causes_risk_factors,causes_risk_factors,True
+what approaches are used to manage depression,general_management,general_management,True
+how do healthcare professionals check for hypertension,diagnosis_tests,diagnosis_tests,True
+what signs are commonly associated with urinary tract infection uti,symptoms,symptoms,True
+when should symptoms associated with allergy be assessed,when_to_seek_care,when_to_seek_care,True
+how does allergy develop,causes_risk_factors,causes_risk_factors,True
+can i get an introduction to heart disease,definition,definition,True
+what signs may indicate allergy,symptoms,symptoms,True
+what warning signs of allergy require medical attention,when_to_seek_care,when_to_seek_care,True
+what are the symptoms of gastritis,symptoms,symptoms,True
+how can the risk of urinary tract infection uti be lowered,prevention,prevention,True
+tell me the basics of hypertension,definition,definition,True
+how can someone recognize arthritis,symptoms,symptoms,True
+how do doctors investigate possible kidney stones,diagnosis_tests,diagnosis_tests,True
+could you describe anxiety,definition,definition,True
+how can gastritis show up in the body,symptoms,symptoms,True
+what signs are commonly associated with dehydration,symptoms,symptoms,True
+what are the possible causes of depression,causes_risk_factors,causes_risk_factors,True
+what can lead to asthma,causes_risk_factors,causes_risk_factors,True
+when should i speak to a healthcare professional about food poisoning,when_to_seek_care,when_to_seek_care,True
+what happens during an evaluation for common cold,diagnosis_tests,diagnosis_tests,True
+what are the risk factors for obesity,causes_risk_factors,causes_risk_factors,True
+which factors are associated with pneumonia,causes_risk_factors,causes_risk_factors,True
+how can a person discuss management of anemia with a doctor,general_management,general_management,True
+how can a doctor determine whether someone has diabetes,diagnosis_tests,diagnosis_tests,True
+how is migraine generally managed,general_management,general_management,True
+how do people help prevent anxiety,prevention,prevention,True
+how is suspected thyroid disorders evaluated,diagnosis_tests,diagnosis_tests,True
+what is meant by the condition called anemia,definition,definition,True
+can you list symptoms associated with diabetes,symptoms,symptoms,True
+what signs of anxiety may require urgent attention,when_to_seek_care,when_to_seek_care,True
+what signs of diabetes may require urgent attention,when_to_seek_care,when_to_seek_care,True
+can you share prevention tips for arthritis,prevention,prevention,True
+how can the risk of diabetes be lowered,prevention,prevention,True
+how do people help prevent obesity,prevention,prevention,True
+what types of tests might be considered for thyroid disorders,diagnosis_tests,diagnosis_tests,True
+can you tell me about covid-19,definition,definition,True
+what are the symptoms of high cholesterol,symptoms,symptoms,True
+how is suspected diabetes evaluated,diagnosis_tests,diagnosis_tests,True
+what habits may help prevent thyroid disorders,prevention,prevention,True
+what symptoms of hypertension may need prompt evaluation,when_to_seek_care,when_to_seek_care,True
+how can a person become affected by diabetes,causes_risk_factors,causes_risk_factors,True
+how is urinary tract infection uti diagnosed,diagnosis_tests,diagnosis_tests,True
+what symptoms related to arthritis should not be ignored,when_to_seek_care,when_to_seek_care,True
+what can help reduce the risk of arthritis,prevention,prevention,True
+what changes might indicate anemia,symptoms,symptoms,True
+how can someone tell when to seek help for thyroid disorders,when_to_seek_care,when_to_seek_care,True
+what types of tests might be considered for obesity,diagnosis_tests,diagnosis_tests,True
+explain kidney stones for a beginner,definition,definition,True
+how do healthcare professionals help people with insomnia,general_management,general_management,True
+which tests may help identify migraine,diagnosis_tests,diagnosis_tests,True
+what exactly is meant by covid-19,definition,definition,True
+what general steps may help someone living with asthma,general_management,general_management,True
+can you explain the usual management of anemia,general_management,general_management,True
+what should someone know about managing influenza,general_management,general_management,True
+can a laboratory test help detect thyroid disorders,diagnosis_tests,diagnosis_tests,True
+what preventive habits are associated with acid reflux gerd,prevention,prevention,True
+how can insomnia be prevented,prevention,prevention,True
+what changes might indicate dehydration,symptoms,symptoms,True
+what symptoms related to influenza should not be ignored,when_to_seek_care,when_to_seek_care,True
+what can lead to anxiety,causes_risk_factors,causes_risk_factors,True
+please explain the meaning of thyroid disorders,definition,definition,True
+what should i look out for with high cholesterol,symptoms,symptoms,True
+i would like an explanation of allergy,definition,definition,True
+what are general prevention strategies for hypertension,prevention,prevention,True
+what are general prevention strategies for heart disease,prevention,prevention,True
+what signs mean someone should see a doctor about hypertension,when_to_seek_care,when_to_seek_care,True
+what are the risk factors for dehydration,causes_risk_factors,causes_risk_factors,True
+how can a person become affected by thyroid disorders,causes_risk_factors,causes_risk_factors,True
+what should i know about the causes of urinary tract infection uti,causes_risk_factors,causes_risk_factors,True
+what tests are used when checking for influenza,diagnosis_tests,diagnosis_tests,True
+when might dehydration require urgent medical assessment,when_to_seek_care,when_to_seek_care,True
+what assessments may be involved in diagnosing migraine,diagnosis_tests,diagnosis_tests,True
+what may increase someone s risk of food poisoning,causes_risk_factors,causes_risk_factors,True
+how might someone reduce their likelihood of covid-19,prevention,prevention,True
+what can lead to covid-19,causes_risk_factors,causes_risk_factors,True
+i want to understand what kidney stones means,definition,definition,True
+what steps may help prevent acid reflux gerd,prevention,prevention,True
+help me understand high cholesterol,definition,definition,True
+what may increase someone s risk of kidney stones,causes_risk_factors,causes_risk_factors,True
+tell me about the signs of influenza,symptoms,symptoms,True
+what warning signs should prompt someone to seek help for acid reflux gerd,when_to_seek_care,when_to_seek_care,True
+what preventive measures are useful for gastritis,prevention,prevention,True
+what signs of depression may require urgent attention,when_to_seek_care,when_to_seek_care,True
+what support may be available for people with hypertension,general_management,general_management,True
+what warning signs should prompt someone to seek help for allergy,when_to_seek_care,when_to_seek_care,True
+how can a person become affected by asthma,causes_risk_factors,causes_risk_factors,True
+how do clinicians assess possible thyroid disorders,diagnosis_tests,diagnosis_tests,True
+what should i know about the causes of kidney stones,causes_risk_factors,causes_risk_factors,True
+i would like an explanation of heart disease,definition,definition,True
+what should i know about testing for arthritis,diagnosis_tests,diagnosis_tests,True
+how might a healthcare professional confirm vitamin d deficiency,diagnosis_tests,diagnosis_tests,True
+what can lead to vitamin d deficiency,causes_risk_factors,causes_risk_factors,True
+what physical signs can occur with heart disease,symptoms,symptoms,True
+how might a healthcare professional confirm allergy,diagnosis_tests,diagnosis_tests,True
+give me an overview of common cold,definition,definition,True
+what steps can help protect against arthritis,prevention,prevention,True
+can you describe general care for depression,general_management,general_management,True
+how would you describe heart disease,definition,definition,True
+what underlying factors are associated with food poisoning,causes_risk_factors,causes_risk_factors,True
+how can dehydration be prevented,prevention,prevention,True
+what can lead to allergy,causes_risk_factors,causes_risk_factors,True
+what causes kidney stones,causes_risk_factors,causes_risk_factors,True
+what symptoms are often reported with covid-19,symptoms,symptoms,True
+tell me about the signs of covid-19,symptoms,symptoms,True
+what does the term heart disease mean,definition,definition,True
+where can someone learn about managing heart disease,general_management,general_management,True
+what types of tests might be considered for depression,diagnosis_tests,diagnosis_tests,True
+what situations involving food poisoning call for medical advice,when_to_seek_care,when_to_seek_care,True
+can you explain the diagnostic process for dehydration,diagnosis_tests,diagnosis_tests,True
+what does managing gastritis usually involve,general_management,general_management,True
+what can someone do to avoid certain risk factors for food poisoning,prevention,prevention,True
+what general care may help with anemia,general_management,general_management,True
+how can high cholesterol be prevented,prevention,prevention,True
+what symptoms related to obesity should not be ignored,when_to_seek_care,when_to_seek_care,True
+when might common cold require urgent medical assessment,when_to_seek_care,when_to_seek_care,True
+can you share prevention tips for influenza,prevention,prevention,True
+what steps may help prevent heart disease,prevention,prevention,True
+which tests may help identify anemia,diagnosis_tests,diagnosis_tests,True
+how can people reduce their risk of influenza,prevention,prevention,True
+what steps can help protect against dehydration,prevention,prevention,True
+what should i know about the causes of food poisoning,causes_risk_factors,causes_risk_factors,True
+where can someone learn about managing asthma,general_management,general_management,True
+what general care may help with gastritis,general_management,general_management,True
+when should i get medical advice about influenza,when_to_seek_care,when_to_seek_care,True
+what are the usual signs of kidney stones,symptoms,symptoms,True
+give me an overview of gastritis,definition,definition,True
+what medical examinations may be used for kidney stones,diagnosis_tests,diagnosis_tests,True
+can you explain pneumonia in simple terms,definition,definition,True
+how can healthcare workers identify food poisoning,diagnosis_tests,diagnosis_tests,True
+how does obesity usually feel,symptoms,symptoms,True
+i would like an explanation of hypertension,definition,definition,True
+what should i ask my healthcare professional about managing anxiety,general_management,general_management,True
+can lifestyle factors contribute to urinary tract infection uti,causes_risk_factors,causes_risk_factors,True
+i need basic information about urinary tract infection uti,definition,definition,True
+tell me about the signs of migraine,symptoms,symptoms,True
+what concerning changes associated with obesity need attention,when_to_seek_care,when_to_seek_care,True
+when is it important to get help for common cold,when_to_seek_care,when_to_seek_care,True
+what preventive measures are useful for anxiety,prevention,prevention,True
+how can the risk of insomnia be lowered,prevention,prevention,True
+what should people consider to reduce the risk of urinary tract infection uti,prevention,prevention,True
+what are the general management options for heart disease,general_management,general_management,True
+can lifestyle changes help prevent kidney stones,prevention,prevention,True
+how is obesity diagnosed,diagnosis_tests,diagnosis_tests,True
+how do people help prevent high cholesterol,prevention,prevention,True
+could i learn the basics of common cold,definition,definition,True
+how does kidney stones usually feel,symptoms,symptoms,True
+how does vitamin d deficiency develop,causes_risk_factors,causes_risk_factors,True
+when might covid-19 require urgent medical assessment,when_to_seek_care,when_to_seek_care,True
+could you describe the symptoms linked to heart disease,symptoms,symptoms,True
+what concerning changes associated with food poisoning need attention,when_to_seek_care,when_to_seek_care,True
+what symptoms can be related to migraine,symptoms,symptoms,True
+how might diabetes affect how someone feels,symptoms,symptoms,True
+how can diabetes show up in the body,symptoms,symptoms,True
+how might a healthcare professional confirm urinary tract infection uti,diagnosis_tests,diagnosis_tests,True
+what can lead to food poisoning,causes_risk_factors,causes_risk_factors,True
+could you describe migraine,definition,definition,True
+what symptoms of migraine may need prompt evaluation,when_to_seek_care,when_to_seek_care,True
+tell me about the signs of hypertension,symptoms,symptoms,True
+how is care for urinary tract infection uti usually approached,general_management,general_management,True
+how might a healthcare professional confirm influenza,diagnosis_tests,diagnosis_tests,True
+explain anxiety for a beginner,definition,definition,True
+how is suspected common cold evaluated,diagnosis_tests,diagnosis_tests,True
+what situations involving migraine call for medical advice,when_to_seek_care,when_to_seek_care,True
+give me an overview of diabetes,definition,definition,True
+what checks might a doctor perform for common cold,diagnosis_tests,diagnosis_tests,True
+i want to understand what insomnia means,definition,definition,True
+what may contribute to kidney stones,causes_risk_factors,causes_risk_factors,True
+i want to understand what obesity means,definition,definition,True
+how can someone lower their chances of developing pneumonia,prevention,prevention,True
+what should people consider to reduce the risk of diabetes,prevention,prevention,True
+what approaches might a clinician recommend for pneumonia,general_management,general_management,True
+how can i lower my risk of urinary tract infection uti,prevention,prevention,True
+when should i get medical advice about anxiety,when_to_seek_care,when_to_seek_care,True
+how can a person become affected by allergy,causes_risk_factors,causes_risk_factors,True
+how might someone reduce their likelihood of arthritis,prevention,prevention,True
+when should i get medical advice about depression,when_to_seek_care,when_to_seek_care,True
+could you describe the symptoms linked to kidney stones,symptoms,symptoms,True
+how is suspected kidney stones evaluated,diagnosis_tests,diagnosis_tests,True
+how can covid-19 be prevented,prevention,prevention,True
+can you list symptoms associated with gastritis,symptoms,symptoms,True
+how can i protect myself from obesity,prevention,prevention,True
+how can depression be prevented,prevention,prevention,True
+i would like an explanation of insomnia,definition,definition,True
+what is involved in checking someone for diabetes,diagnosis_tests,diagnosis_tests,True
+can you share prevention tips for obesity,prevention,prevention,True
+how do healthcare professionals help people with high cholesterol,general_management,general_management,True
+how might a healthcare professional confirm depression,diagnosis_tests,diagnosis_tests,True
+when should someone seek medical care for hypertension,when_to_seek_care,when_to_seek_care,True
+what support may be available for people with heart disease,general_management,general_management,True
+what symptoms can be related to vitamin d deficiency,symptoms,symptoms,True
+how is covid-19 diagnosed,diagnosis_tests,diagnosis_tests,True
+what does managing common cold usually involve,general_management,general_management,True
+how can healthcare workers identify heart disease,diagnosis_tests,diagnosis_tests,True
+what should i know about insomnia,definition,definition,True
+can you share prevention tips for depression,prevention,prevention,True
+when is professional advice needed for thyroid disorders,when_to_seek_care,when_to_seek_care,True
+what makes someone more likely to develop anemia,causes_risk_factors,causes_risk_factors,True
+can lifestyle changes help prevent vitamin d deficiency,prevention,prevention,True
+what are common ways to manage diabetes,general_management,general_management,True
+what types of tests might be considered for migraine,diagnosis_tests,diagnosis_tests,True
+how do professionals support patients with diabetes,general_management,general_management,True
+when should a person contact a healthcare professional about covid-19,when_to_seek_care,when_to_seek_care,True
+how might someone reduce their likelihood of urinary tract infection uti,prevention,prevention,True
+what types of tests might be considered for influenza,diagnosis_tests,diagnosis_tests,True
+tell me about the signs of heart disease,symptoms,symptoms,True
+what could make anxiety more likely,causes_risk_factors,causes_risk_factors,True
+what symptoms of gastritis may need prompt evaluation,when_to_seek_care,when_to_seek_care,True
+what factors increase the chance of vitamin d deficiency,causes_risk_factors,causes_risk_factors,True
+what support may be available for people with kidney stones,general_management,general_management,True
+what assessments may be involved in diagnosing vitamin d deficiency,diagnosis_tests,diagnosis_tests,True
+can lifestyle changes help prevent heart disease,prevention,prevention,True
+what habits may help prevent acid reflux gerd,prevention,prevention,True
+what may contribute to obesity,causes_risk_factors,causes_risk_factors,True
+how do healthcare professionals help people with pneumonia,general_management,general_management,True
+can you tell me about food poisoning,definition,definition,True
+how can healthcare workers identify obesity,diagnosis_tests,diagnosis_tests,True
+what symptoms related to depression should not be ignored,when_to_seek_care,when_to_seek_care,True
+can a laboratory test help detect urinary tract infection uti,diagnosis_tests,diagnosis_tests,True
+how can i lower my risk of allergy,prevention,prevention,True
+what signs may indicate influenza,symptoms,symptoms,True
+what signs of pneumonia may require urgent attention,when_to_seek_care,when_to_seek_care,True
+what are the usual signs of insomnia,symptoms,symptoms,True
+how is care for obesity usually approached,general_management,general_management,True
+how can healthcare workers identify depression,diagnosis_tests,diagnosis_tests,True
+how do clinicians assess possible vitamin d deficiency,diagnosis_tests,diagnosis_tests,True
+what signs mean someone should see a doctor about migraine,when_to_seek_care,when_to_seek_care,True
+how do clinicians assess possible arthritis,diagnosis_tests,diagnosis_tests,True
+what general care may help with covid-19,general_management,general_management,True
+help me understand gastritis,definition,definition,True
+what should i know about the causes of common cold,causes_risk_factors,causes_risk_factors,True
+what can help reduce the risk of food poisoning,prevention,prevention,True
+what general care may help with allergy,general_management,general_management,True
+i need basic information about thyroid disorders,definition,definition,True
+when should i get medical advice about asthma,when_to_seek_care,when_to_seek_care,True
+explain thyroid disorders for a beginner,definition,definition,True
+where can someone learn about managing hypertension,general_management,general_management,True
+are there ways to reduce the chance of allergy,prevention,prevention,True
+what general steps may help someone living with allergy,general_management,general_management,True
+how does dehydration usually feel,symptoms,symptoms,True
+when should a person contact a healthcare professional about arthritis,when_to_seek_care,when_to_seek_care,True
+which factors are associated with arthritis,causes_risk_factors,causes_risk_factors,True
+tell me the basics of influenza,definition,definition,True
+what may contribute to influenza,causes_risk_factors,causes_risk_factors,True
+how is allergy diagnosed,diagnosis_tests,diagnosis_tests,True
+what symptoms are often reported with insomnia,symptoms,symptoms,True
+when should a person get medical support for anemia,when_to_seek_care,when_to_seek_care,True
+what does managing thyroid disorders usually involve,general_management,general_management,True
+can you explain migraine in simple terms,definition,definition,True
+describe obesity in simple language,definition,definition,True
+why might someone develop kidney stones,causes_risk_factors,causes_risk_factors,True
+how do people help prevent influenza,prevention,prevention,True
+how can the risk of pneumonia be lowered,prevention,prevention,True
+are there ways to reduce the chance of dehydration,prevention,prevention,True
+what symptoms of common cold may need prompt evaluation,when_to_seek_care,when_to_seek_care,True
+what are the usual signs of diabetes,symptoms,symptoms,True
+how can someone manage food poisoning with professional guidance,general_management,general_management,True
+what causes common cold,causes_risk_factors,causes_risk_factors,True
+when should i speak to a healthcare professional about covid-19,when_to_seek_care,when_to_seek_care,True
+can lifestyle factors contribute to asthma,causes_risk_factors,causes_risk_factors,True
+what makes someone more likely to develop obesity,causes_risk_factors,causes_risk_factors,True
+what does managing diabetes usually involve,general_management,general_management,True
+when should someone get checked for possible heart disease,when_to_seek_care,when_to_seek_care,True
+what are common warning signs of pneumonia,symptoms,symptoms,True
+what symptoms can be related to acid reflux gerd,symptoms,symptoms,True
+i would like an explanation of depression,definition,definition,True
+what factors increase the chance of anxiety,causes_risk_factors,causes_risk_factors,True
+what should someone know about managing food poisoning,general_management,general_management,True
+what care options might be discussed for allergy,general_management,general_management,True
+explain allergy for a beginner,definition,definition,True
+what happens during an evaluation for diabetes,diagnosis_tests,diagnosis_tests,True
+what approaches are used to manage covid-19,general_management,general_management,True
+what care options might be discussed for insomnia,general_management,general_management,True
+how can diabetes be prevented,prevention,prevention,True
+when should someone seek medical care for influenza,when_to_seek_care,when_to_seek_care,True
+explain food poisoning for a beginner,definition,definition,True
+what may contribute to covid-19,causes_risk_factors,causes_risk_factors,True
+how can i lower my risk of acid reflux gerd,prevention,prevention,True
+what symptoms of covid-19 may need prompt evaluation,when_to_seek_care,when_to_seek_care,True
+when should someone get checked for possible acid reflux gerd,when_to_seek_care,when_to_seek_care,True
+which tests may help identify thyroid disorders,diagnosis_tests,diagnosis_tests,True
+how might someone reduce their likelihood of gastritis,prevention,prevention,True
+when should i speak to a healthcare professional about acid reflux gerd,when_to_seek_care,when_to_seek_care,True
+can you explain why asthma occurs,causes_risk_factors,causes_risk_factors,True
+what steps may help prevent allergy,prevention,prevention,True
+what are common warning signs of asthma,symptoms,symptoms,True
+what should i know about the causes of vitamin d deficiency,causes_risk_factors,causes_risk_factors,True
+what are general prevention strategies for obesity,prevention,prevention,True
+can you share prevention tips for asthma,prevention,prevention,True
+what signs mean someone should see a doctor about depression,when_to_seek_care,when_to_seek_care,True
+which factors are associated with gastritis,causes_risk_factors,causes_risk_factors,True
+what makes someone more likely to develop heart disease,causes_risk_factors,causes_risk_factors,True
+how can someone manage high cholesterol with professional guidance,general_management,general_management,True
+what exactly is meant by common cold,definition,definition,True
+how might heart disease affect how someone feels,symptoms,symptoms,True
+how can someone recognize asthma,symptoms,symptoms,True
+how can pneumonia be prevented,prevention,prevention,True
+what physical signs can occur with acid reflux gerd,symptoms,symptoms,True
+what makes someone more likely to develop allergy,causes_risk_factors,causes_risk_factors,True
+how does insomnia usually feel,symptoms,symptoms,True
+what is linked to the development of asthma,causes_risk_factors,causes_risk_factors,True
+what are the usual signs of pneumonia,symptoms,symptoms,True
+how can a person become affected by pneumonia,causes_risk_factors,causes_risk_factors,True
+what exactly is meant by diabetes,definition,definition,True
+can you describe general care for obesity,general_management,general_management,True
+how can someone tell when to seek help for kidney stones,when_to_seek_care,when_to_seek_care,True
+what assessments may be involved in diagnosing urinary tract infection uti,diagnosis_tests,diagnosis_tests,True
+what support may be available for people with vitamin d deficiency,general_management,general_management,True
+when should symptoms associated with insomnia be assessed,when_to_seek_care,when_to_seek_care,True
+what happens during an evaluation for depression,diagnosis_tests,diagnosis_tests,True
+what could make allergy more likely,causes_risk_factors,causes_risk_factors,True
+how do professionals support patients with arthritis,general_management,general_management,True
+how might common cold affect how someone feels,symptoms,symptoms,True
+where can someone learn about managing high cholesterol,general_management,general_management,True
+what tests are used when checking for anxiety,diagnosis_tests,diagnosis_tests,True
+what types of tests might be considered for hypertension,diagnosis_tests,diagnosis_tests,True
+how can i protect myself from pneumonia,prevention,prevention,True
+what situations involving allergy call for medical advice,when_to_seek_care,when_to_seek_care,True
+when should i get medical advice about allergy,when_to_seek_care,when_to_seek_care,True
+how can people reduce their risk of insomnia,prevention,prevention,True
+how can a doctor determine whether someone has gastritis,diagnosis_tests,diagnosis_tests,True
+when should i get medical advice about obesity,when_to_seek_care,when_to_seek_care,True
+how is suspected allergy evaluated,diagnosis_tests,diagnosis_tests,True
+what approaches might a clinician recommend for anemia,general_management,general_management,True
+when should a person contact a healthcare professional about anemia,when_to_seek_care,when_to_seek_care,True
+what are the general management options for pneumonia,general_management,general_management,True
+how might someone know they have symptoms of common cold,symptoms,symptoms,True
+what are common ways to manage insomnia,general_management,general_management,True
+are there ways to reduce the chance of pneumonia,prevention,prevention,True
+what steps may help prevent depression,prevention,prevention,True
+how is diabetes diagnosed,diagnosis_tests,diagnosis_tests,True
+what might a person experience with heart disease,symptoms,symptoms,True
+what habits may help prevent covid-19,prevention,prevention,True
+what exactly is meant by insomnia,definition,definition,True
+how do clinicians assess possible pneumonia,diagnosis_tests,diagnosis_tests,True
+what symptoms are often reported with kidney stones,symptoms,symptoms,True
+can you list symptoms associated with insomnia,symptoms,symptoms,True
+how can someone recognize common cold,symptoms,symptoms,True
+tell me the basics of common cold,definition,definition,True
+what underlying factors are associated with common cold,causes_risk_factors,causes_risk_factors,True
+what symptoms can occur with influenza,symptoms,symptoms,True
+i want to understand what urinary tract infection uti means,definition,definition,True
+what symptoms can occur with depression,symptoms,symptoms,True
+how can people reduce their risk of anxiety,prevention,prevention,True
+describe kidney stones in simple language,definition,definition,True
+how can healthcare workers identify anxiety,diagnosis_tests,diagnosis_tests,True
+what does managing covid-19 usually involve,general_management,general_management,True
+what symptoms can occur with thyroid disorders,symptoms,symptoms,True
+how can obesity be prevented,prevention,prevention,True
+what signs may indicate high cholesterol,symptoms,symptoms,True
+how might someone know they have symptoms of high cholesterol,symptoms,symptoms,True
+what factors increase the chance of influenza,causes_risk_factors,causes_risk_factors,True
+can lifestyle factors contribute to allergy,causes_risk_factors,causes_risk_factors,True
+when should a person get medical support for asthma,when_to_seek_care,when_to_seek_care,True
+what types of tests might be considered for pneumonia,diagnosis_tests,diagnosis_tests,True
+can you explain food poisoning in simple terms,definition,definition,True
+what should i know about diabetes,definition,definition,True
+how is suspected heart disease evaluated,diagnosis_tests,diagnosis_tests,True
+which tests may help identify asthma,diagnosis_tests,diagnosis_tests,True
+how is care for depression usually approached,general_management,general_management,True
+how can a person discuss management of kidney stones with a doctor,general_management,general_management,True
+why might someone develop influenza,causes_risk_factors,causes_risk_factors,True
+what general care may help with anxiety,general_management,general_management,True
+how can healthcare workers identify pneumonia,diagnosis_tests,diagnosis_tests,True
+where can someone learn about managing pneumonia,general_management,general_management,True
+tell me the basics of insomnia,definition,definition,True
+what signs may indicate migraine,symptoms,symptoms,True
+how do healthcare professionals check for migraine,diagnosis_tests,diagnosis_tests,True
+how might someone know they have symptoms of food poisoning,symptoms,symptoms,True
+can i get an introduction to thyroid disorders,definition,definition,True
+how can someone manage migraine with professional guidance,general_management,general_management,True
+what makes someone more likely to develop pneumonia,causes_risk_factors,causes_risk_factors,True
+describe thyroid disorders in simple language,definition,definition,True
+how can someone tell when to seek help for dehydration,when_to_seek_care,when_to_seek_care,True
+what might a person experience with common cold,symptoms,symptoms,True
+can lifestyle factors contribute to dehydration,causes_risk_factors,causes_risk_factors,True
+how is care for insomnia usually approached,general_management,general_management,True
+where can someone learn about managing vitamin d deficiency,general_management,general_management,True
+how can people reduce their risk of pneumonia,prevention,prevention,True
+i would like an explanation of vitamin d deficiency,definition,definition,True
+tell me about the signs of thyroid disorders,symptoms,symptoms,True
+what general steps may help someone living with depression,general_management,general_management,True
+what habits may help prevent influenza,prevention,prevention,True
+tell me the basics of vitamin d deficiency,definition,definition,True
+i would like an explanation of obesity,definition,definition,True
+i need basic information about high cholesterol,definition,definition,True
+how is care for pneumonia usually approached,general_management,general_management,True
+what signs mean someone should see a doctor about food poisoning,when_to_seek_care,when_to_seek_care,True
+how do doctors investigate possible asthma,diagnosis_tests,diagnosis_tests,True
+what are the risk factors for anxiety,causes_risk_factors,causes_risk_factors,True
+what signs of covid-19 may require urgent attention,when_to_seek_care,when_to_seek_care,True
+what may increase someone s risk of covid-19,causes_risk_factors,causes_risk_factors,True
+what concerning changes associated with migraine need attention,when_to_seek_care,when_to_seek_care,True
+what causes hypertension,causes_risk_factors,causes_risk_factors,True
+why do people get high cholesterol,causes_risk_factors,causes_risk_factors,True
+what is linked to the development of obesity,causes_risk_factors,causes_risk_factors,True
+what symptoms are often reported with influenza,symptoms,symptoms,True
+what should i ask my healthcare professional about managing depression,general_management,general_management,True
+what symptoms of depression may need prompt evaluation,when_to_seek_care,when_to_seek_care,True
+how is obesity generally managed,general_management,general_management,True
+what general steps may help someone living with migraine,general_management,general_management,True
+what are reasons to contact a doctor about acid reflux gerd,when_to_seek_care,when_to_seek_care,True
+what approaches are used to manage diabetes,general_management,general_management,True
+what are the risk factors for thyroid disorders,causes_risk_factors,causes_risk_factors,True
+what are the risk factors for food poisoning,causes_risk_factors,causes_risk_factors,True
+what can someone do to avoid certain risk factors for anemia,prevention,prevention,True
+what steps may help prevent migraine,prevention,prevention,True
+what changes might indicate gastritis,symptoms,symptoms,True
+when might thyroid disorders require urgent medical assessment,when_to_seek_care,when_to_seek_care,True
+what underlying factors are associated with anemia,causes_risk_factors,causes_risk_factors,True
+why do people get vitamin d deficiency,causes_risk_factors,causes_risk_factors,True
+what should i ask my healthcare professional about managing urinary tract infection uti,general_management,general_management,True
+what care options might be discussed for hypertension,general_management,general_management,True
+how can a person discuss management of migraine with a doctor,general_management,general_management,True
+what is involved in checking someone for asthma,diagnosis_tests,diagnosis_tests,True
+can lifestyle changes help prevent covid-19,prevention,prevention,True
+how can a person become affected by insomnia,causes_risk_factors,causes_risk_factors,True
+what physical signs can occur with obesity,symptoms,symptoms,True
+can a laboratory test help detect obesity,diagnosis_tests,diagnosis_tests,True
+when should a person get medical support for obesity,when_to_seek_care,when_to_seek_care,True
+what preventive habits are associated with food poisoning,prevention,prevention,True
+what symptoms related to asthma should not be ignored,when_to_seek_care,when_to_seek_care,True
+how can healthcare workers identify thyroid disorders,diagnosis_tests,diagnosis_tests,True
+can you share prevention tips for hypertension,prevention,prevention,True
+what physical signs can occur with gastritis,symptoms,symptoms,True
+what does managing insomnia usually involve,general_management,general_management,True
+can you describe general care for covid-19,general_management,general_management,True
+what might a person experience with food poisoning,symptoms,symptoms,True
+what is linked to the development of dehydration,causes_risk_factors,causes_risk_factors,True
+help me understand food poisoning,definition,definition,True
+what changes might indicate hypertension,symptoms,symptoms,True
+how can i lower my risk of anemia,prevention,prevention,True
+how is influenza diagnosed,diagnosis_tests,diagnosis_tests,True
+what symptoms of diabetes may need prompt evaluation,when_to_seek_care,when_to_seek_care,True
+what is involved in checking someone for dehydration,diagnosis_tests,diagnosis_tests,True
+what should people consider to reduce the risk of influenza,prevention,prevention,True
+what medical examinations may be used for heart disease,diagnosis_tests,diagnosis_tests,True
+what factors increase the chance of acid reflux gerd,causes_risk_factors,causes_risk_factors,True
+when should a person contact a healthcare professional about allergy,when_to_seek_care,when_to_seek_care,True
+what warning signs of pneumonia require medical attention,when_to_seek_care,when_to_seek_care,True
+how can a person discuss management of high cholesterol with a doctor,general_management,general_management,True
+what should i look out for with gastritis,symptoms,symptoms,True
+what should i know about the causes of pneumonia,causes_risk_factors,causes_risk_factors,True
+how can a person discuss management of arthritis with a doctor,general_management,general_management,True
+how can someone recognize depression,symptoms,symptoms,True
+what can someone do to avoid certain risk factors for obesity,prevention,prevention,True
+what makes someone more likely to develop asthma,causes_risk_factors,causes_risk_factors,True
+what are common ways to manage pneumonia,general_management,general_management,True
+what physical signs can occur with allergy,symptoms,symptoms,True
+when should symptoms associated with covid-19 be assessed,when_to_seek_care,when_to_seek_care,True
+how can someone lower their chances of developing gastritis,prevention,prevention,True
+how can a person discuss management of urinary tract infection uti with a doctor,general_management,general_management,True
+how can a doctor determine whether someone has pneumonia,diagnosis_tests,diagnosis_tests,True
+where can someone learn about managing insomnia,general_management,general_management,True
+how can i protect myself from anxiety,prevention,prevention,True
+what signs may indicate depression,symptoms,symptoms,True
+explain diabetes for a beginner,definition,definition,True
+could you describe the symptoms linked to anxiety,symptoms,symptoms,True
+what steps may help prevent thyroid disorders,prevention,prevention,True
+could i learn the basics of obesity,definition,definition,True
+how is anemia generally managed,general_management,general_management,True
+what are common contributors to anxiety,causes_risk_factors,causes_risk_factors,True
+how can a doctor determine whether someone has obesity,diagnosis_tests,diagnosis_tests,True
+what signs of urinary tract infection uti may require urgent attention,when_to_seek_care,when_to_seek_care,True
+what support may be available for people with thyroid disorders,general_management,general_management,True
+how can i protect myself from urinary tract infection uti,prevention,prevention,True
+what medical examinations may be used for arthritis,diagnosis_tests,diagnosis_tests,True
+what symptoms are often reported with food poisoning,symptoms,symptoms,True
+how might someone know they have symptoms of asthma,symptoms,symptoms,True
+give me an overview of heart disease,definition,definition,True
+give me an overview of asthma,definition,definition,True
+what are general prevention strategies for high cholesterol,prevention,prevention,True
+why do people get asthma,causes_risk_factors,causes_risk_factors,True
+explain hypertension for a beginner,definition,definition,True
+how can i protect myself from high cholesterol,prevention,prevention,True
+what support may be available for people with allergy,general_management,general_management,True
+tell me about the signs of food poisoning,symptoms,symptoms,True
+what are the usual signs of hypertension,symptoms,symptoms,True
+how would you describe anemia,definition,definition,True
+why do people get common cold,causes_risk_factors,causes_risk_factors,True
+can you explain why anxiety occurs,causes_risk_factors,causes_risk_factors,True
+please explain the meaning of allergy,definition,definition,True
+what steps may help prevent asthma,prevention,prevention,True
+what assessments may be involved in diagnosing gastritis,diagnosis_tests,diagnosis_tests,True
+what steps may help prevent arthritis,prevention,prevention,True
+what is involved in checking someone for kidney stones,diagnosis_tests,diagnosis_tests,True
+when should someone seek medical care for heart disease,when_to_seek_care,when_to_seek_care,True
+how can healthcare workers identify dehydration,diagnosis_tests,diagnosis_tests,True
+what are common warning signs of high cholesterol,symptoms,symptoms,True
+can you explain vitamin d deficiency in simple terms,definition,definition,True
+what medical examinations may be used for thyroid disorders,diagnosis_tests,diagnosis_tests,True
+how might a healthcare professional confirm covid-19,diagnosis_tests,diagnosis_tests,True
+how is care for acid reflux gerd usually approached,general_management,general_management,True
+what should someone know about managing gastritis,general_management,general_management,True
+when should a person contact a healthcare professional about thyroid disorders,when_to_seek_care,when_to_seek_care,True
+could you describe urinary tract infection uti,definition,definition,True
+what are the usual signs of anxiety,symptoms,symptoms,True
+what should i ask my healthcare professional about managing food poisoning,general_management,general_management,True
+help me understand anemia,definition,definition,True
+when might allergy require urgent medical assessment,when_to_seek_care,when_to_seek_care,True
+what approaches might a clinician recommend for depression,general_management,general_management,True
+what could make kidney stones more likely,causes_risk_factors,causes_risk_factors,True
+what signs of influenza may require urgent attention,when_to_seek_care,when_to_seek_care,True
+what signs are commonly associated with obesity,symptoms,symptoms,True
+what should someone know about managing high cholesterol,general_management,general_management,True
+how can healthcare workers identify urinary tract infection uti,diagnosis_tests,diagnosis_tests,True
+what is meant by the condition called urinary tract infection uti,definition,definition,True
+how can someone tell when to seek help for anxiety,when_to_seek_care,when_to_seek_care,True
+what are common contributors to food poisoning,causes_risk_factors,causes_risk_factors,True
+when should a person contact a healthcare professional about migraine,when_to_seek_care,when_to_seek_care,True
+i want to understand what asthma means,definition,definition,True
+how can someone tell when to seek help for common cold,when_to_seek_care,when_to_seek_care,True
+which tests may help identify heart disease,diagnosis_tests,diagnosis_tests,True
+what warning signs of asthma require medical attention,when_to_seek_care,when_to_seek_care,True
+could i learn the basics of allergy,definition,definition,True
+can you explain the usual management of influenza,general_management,general_management,True
+when should i get medical advice about heart disease,when_to_seek_care,when_to_seek_care,True
+give me an overview of allergy,definition,definition,True
+when should a person get medical support for gastritis,when_to_seek_care,when_to_seek_care,True
+what are reasons to contact a doctor about migraine,when_to_seek_care,when_to_seek_care,True
+how might a healthcare professional confirm arthritis,diagnosis_tests,diagnosis_tests,True
+what are reasons to contact a doctor about food poisoning,when_to_seek_care,when_to_seek_care,True
+can you explain the diagnostic process for gastritis,diagnosis_tests,diagnosis_tests,True
+what signs may indicate kidney stones,symptoms,symptoms,True
+what symptoms can occur with kidney stones,symptoms,symptoms,True
+tell me the basics of acid reflux gerd,definition,definition,True
+what can lead to pneumonia,causes_risk_factors,causes_risk_factors,True
+what is influenza,definition,definition,True
+what types of tests might be considered for dehydration,diagnosis_tests,diagnosis_tests,True
+how can people reduce their risk of hypertension,prevention,prevention,True
+how do doctors investigate possible allergy,diagnosis_tests,diagnosis_tests,True
+what does the term arthritis mean,definition,definition,True
+could you describe the symptoms linked to insomnia,symptoms,symptoms,True
+how can a person discuss management of covid-19 with a doctor,general_management,general_management,True
+what signs mean someone should see a doctor about heart disease,when_to_seek_care,when_to_seek_care,True
+what are reasons to contact a doctor about influenza,when_to_seek_care,when_to_seek_care,True
+what are the symptoms of hypertension,symptoms,symptoms,True
+what physical signs can occur with dehydration,symptoms,symptoms,True
+how might a healthcare professional confirm diabetes,diagnosis_tests,diagnosis_tests,True
+how can someone recognize migraine,symptoms,symptoms,True
+how can someone recognize food poisoning,symptoms,symptoms,True
+what should people consider to reduce the risk of depression,prevention,prevention,True
+which diagnostic methods are used for dehydration,diagnosis_tests,diagnosis_tests,True
+when should symptoms associated with anxiety be assessed,when_to_seek_care,when_to_seek_care,True
+what approaches might a clinician recommend for high cholesterol,general_management,general_management,True
+how do healthcare professionals help people with food poisoning,general_management,general_management,True
+what assessments may be involved in diagnosing common cold,diagnosis_tests,diagnosis_tests,True
+what general care may help with depression,general_management,general_management,True
+what exactly is meant by high cholesterol,definition,definition,True
+what are the general management options for migraine,general_management,general_management,True
+where can someone learn about managing covid-19,general_management,general_management,True
+what steps can help protect against pneumonia,prevention,prevention,True
+what should i ask my healthcare professional about managing covid-19,general_management,general_management,True
+what is meant by the condition called allergy,definition,definition,True
+which factors are associated with depression,causes_risk_factors,causes_risk_factors,True
+what are common ways to manage food poisoning,general_management,general_management,True
+please explain the meaning of covid-19,definition,definition,True
+what are common contributors to acid reflux gerd,causes_risk_factors,causes_risk_factors,True
+what might a person experience with kidney stones,symptoms,symptoms,True
+what should people consider to reduce the risk of anxiety,prevention,prevention,True
+what situations involving kidney stones call for medical advice,when_to_seek_care,when_to_seek_care,True
+what should i know about anemia,definition,definition,True
+how can i protect myself from food poisoning,prevention,prevention,True
+what is linked to the development of acid reflux gerd,causes_risk_factors,causes_risk_factors,True
+i would like an explanation of food poisoning,definition,definition,True
+what is meant by the condition called covid-19,definition,definition,True
+can a laboratory test help detect arthritis,diagnosis_tests,diagnosis_tests,True
+explain common cold for a beginner,definition,definition,True
+what habits may help prevent arthritis,prevention,prevention,True
+could you describe the symptoms linked to anemia,symptoms,symptoms,True
+what should i know about high cholesterol,definition,definition,True
+can you explain anxiety in simple terms,definition,definition,True
+what are common ways to manage kidney stones,general_management,general_management,True
+what underlying factors are associated with high cholesterol,causes_risk_factors,causes_risk_factors,True
+what concerning changes associated with allergy need attention,when_to_seek_care,when_to_seek_care,True
+what factors increase the chance of heart disease,causes_risk_factors,causes_risk_factors,True
+what physical signs can occur with diabetes,symptoms,symptoms,True
+how is suspected dehydration evaluated,diagnosis_tests,diagnosis_tests,True
+what care options might be discussed for thyroid disorders,general_management,general_management,True
+could you describe arthritis,definition,definition,True
+what tests are used when checking for urinary tract infection uti,diagnosis_tests,diagnosis_tests,True
+can you list symptoms associated with dehydration,symptoms,symptoms,True
+can lifestyle changes help prevent diabetes,prevention,prevention,True
+what tests are used when checking for common cold,diagnosis_tests,diagnosis_tests,True
+i want to understand what high cholesterol means,definition,definition,True
+what signs of obesity may require urgent attention,when_to_seek_care,when_to_seek_care,True
+how do professionals support patients with kidney stones,general_management,general_management,True
+what signs of thyroid disorders may require urgent attention,when_to_seek_care,when_to_seek_care,True
+how can allergy be prevented,prevention,prevention,True
+what are the risk factors for hypertension,causes_risk_factors,causes_risk_factors,True
+can lifestyle factors contribute to vitamin d deficiency,causes_risk_factors,causes_risk_factors,True
+what underlying factors are associated with migraine,causes_risk_factors,causes_risk_factors,True
+describe food poisoning in simple language,definition,definition,True
+what approaches are used to manage vitamin d deficiency,general_management,general_management,True
+how might someone know they have symptoms of gastritis,symptoms,symptoms,True
+when might influenza require urgent medical assessment,when_to_seek_care,when_to_seek_care,True
+why do people get pneumonia,causes_risk_factors,causes_risk_factors,True
+how can a doctor determine whether someone has allergy,diagnosis_tests,diagnosis_tests,True
+what happens during an evaluation for urinary tract infection uti,diagnosis_tests,diagnosis_tests,True
+what should i know about the causes of anxiety,causes_risk_factors,causes_risk_factors,True
+when should symptoms associated with heart disease be assessed,when_to_seek_care,when_to_seek_care,True
+can i get an introduction to pneumonia,definition,definition,True
+which diagnostic methods are used for obesity,diagnosis_tests,diagnosis_tests,True
+what checks might a doctor perform for arthritis,diagnosis_tests,diagnosis_tests,True
+can you describe general care for heart disease,general_management,general_management,True
+i would like an explanation of urinary tract infection uti,definition,definition,True
+i would like an explanation of acid reflux gerd,definition,definition,True
+what physical signs can occur with thyroid disorders,symptoms,symptoms,True
+when should i get medical advice about gastritis,when_to_seek_care,when_to_seek_care,True
+what exactly is meant by urinary tract infection uti,definition,definition,True
+what physical signs can occur with influenza,symptoms,symptoms,True
+can lifestyle factors contribute to high cholesterol,causes_risk_factors,causes_risk_factors,True
+what steps can help protect against common cold,prevention,prevention,True
+what should i ask my healthcare professional about managing dehydration,general_management,general_management,True
+how is care for anxiety usually approached,general_management,general_management,True
+what should i look out for with covid-19,symptoms,symptoms,True
+how do doctors investigate possible thyroid disorders,diagnosis_tests,diagnosis_tests,True
+tell me about the signs of anemia,symptoms,symptoms,True
+what are the risk factors for acid reflux gerd,causes_risk_factors,causes_risk_factors,True
+what is involved in checking someone for pneumonia,diagnosis_tests,diagnosis_tests,True
+what changes might indicate heart disease,symptoms,symptoms,True
+what concerning changes associated with diabetes need attention,when_to_seek_care,when_to_seek_care,True
+what may contribute to pneumonia,causes_risk_factors,causes_risk_factors,True
+what causes obesity,causes_risk_factors,causes_risk_factors,True
+when is it important to get help for covid-19,when_to_seek_care,when_to_seek_care,True
+what are the risk factors for diabetes,causes_risk_factors,causes_risk_factors,True
+why do people get urinary tract infection uti,causes_risk_factors,causes_risk_factors,True
+how can someone tell when to seek help for arthritis,when_to_seek_care,when_to_seek_care,True
+what are common warning signs of anxiety,symptoms,symptoms,True
+what should people consider to reduce the risk of covid-19,prevention,prevention,True
+how can i protect myself from arthritis,prevention,prevention,True
+what should people consider to reduce the risk of migraine,prevention,prevention,True
+what are the possible causes of heart disease,causes_risk_factors,causes_risk_factors,True
+when is professional advice needed for insomnia,when_to_seek_care,when_to_seek_care,True
+are there ways to reduce the chance of migraine,prevention,prevention,True
+what exactly is meant by heart disease,definition,definition,True
+how might someone know they have symptoms of influenza,symptoms,symptoms,True
+what should i know about the causes of thyroid disorders,causes_risk_factors,causes_risk_factors,True
+how can healthcare workers identify covid-19,diagnosis_tests,diagnosis_tests,True
+how can someone manage diabetes with professional guidance,general_management,general_management,True
+can lifestyle changes help prevent allergy,prevention,prevention,True
+what steps may help prevent obesity,prevention,prevention,True
+what exactly is meant by hypertension,definition,definition,True
+tell me about the signs of asthma,symptoms,symptoms,True
+are there ways to reduce the chance of acid reflux gerd,prevention,prevention,True
+i need basic information about common cold,definition,definition,True
+what may increase someone s risk of acid reflux gerd,causes_risk_factors,causes_risk_factors,True
+what may increase someone s risk of asthma,causes_risk_factors,causes_risk_factors,True
+what support may be available for people with depression,general_management,general_management,True
+what checks might a doctor perform for hypertension,diagnosis_tests,diagnosis_tests,True
+could you describe influenza,definition,definition,True
+what symptoms are often reported with high cholesterol,symptoms,symptoms,True
+what situations involving covid-19 call for medical advice,when_to_seek_care,when_to_seek_care,True
+how might a healthcare professional confirm acid reflux gerd,diagnosis_tests,diagnosis_tests,True
+where can someone learn about managing gastritis,general_management,general_management,True
+how can anxiety show up in the body,symptoms,symptoms,True
+please explain the meaning of obesity,definition,definition,True
+what concerning changes associated with thyroid disorders need attention,when_to_seek_care,when_to_seek_care,True
+how can a person become affected by arthritis,causes_risk_factors,causes_risk_factors,True
+what symptoms can occur with migraine,symptoms,symptoms,True
+how do clinicians assess possible gastritis,diagnosis_tests,diagnosis_tests,True
+what care options might be discussed for anxiety,general_management,general_management,True
+give me an overview of obesity,definition,definition,True
+what checks might a doctor perform for allergy,diagnosis_tests,diagnosis_tests,True
+how can someone lower their chances of developing obesity,prevention,prevention,True
+what makes someone more likely to develop high cholesterol,causes_risk_factors,causes_risk_factors,True
+tell me about the signs of anxiety,symptoms,symptoms,True
+what is linked to the development of hypertension,causes_risk_factors,causes_risk_factors,True
+what are general prevention strategies for covid-19,prevention,prevention,True
+when should a person get medical support for insomnia,when_to_seek_care,when_to_seek_care,True
+when should i speak to a healthcare professional about hypertension,when_to_seek_care,when_to_seek_care,True
+could i learn the basics of diabetes,definition,definition,True
+how can someone tell when to seek help for high cholesterol,when_to_seek_care,when_to_seek_care,True
+what are the general management options for anemia,general_management,general_management,True
+i would like an explanation of thyroid disorders,definition,definition,True
+what are the symptoms of influenza,symptoms,symptoms,True
+what is covid-19,definition,definition,True
+which diagnostic methods are used for acid reflux gerd,diagnosis_tests,diagnosis_tests,True
+what may contribute to insomnia,causes_risk_factors,causes_risk_factors,True
+how might influenza affect how someone feels,symptoms,symptoms,True
+please explain the meaning of anxiety,definition,definition,True
+how do clinicians assess possible covid-19,diagnosis_tests,diagnosis_tests,True
+when should symptoms associated with asthma be assessed,when_to_seek_care,when_to_seek_care,True
+what signs mean someone should see a doctor about covid-19,when_to_seek_care,when_to_seek_care,True
+what situations involving heart disease call for medical advice,when_to_seek_care,when_to_seek_care,True
+how do healthcare professionals help people with migraine,general_management,general_management,True
+what approaches are used to manage urinary tract infection uti,general_management,general_management,True

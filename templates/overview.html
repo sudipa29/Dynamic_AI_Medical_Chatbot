@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Overview | {{ app_name }}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script defer
+            src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+
+<body data-page="overview">
+
+{% include "_nav.html" %}
+
+<main class="shell">
+
+    <header class="page-head">
+        <div>
+            <p class="eyebrow">WORKSPACE / OVERVIEW</p>
+            <h1>Chatbot performance</h1>
+            <p>Monitor activity and understand what your users are asking.</p>
+        </div>
+
+        <a class="button primary" href="/assistant">
+            Open AI Assistant →
+        </a>
+    </header>
+
+    <section class="kpis">
+
+        <article class="card">
+            <label>Messages processed</label>
+            <strong id="totalMessages">0</strong>
+            <small>Successful user messages</small>
+        </article>
+
+        <article class="card">
+            <label>Conversations</label>
+            <strong id="totalConversations">1</strong>
+            <small>Current browser session</small>
+        </article>
+
+        <article class="card">
+            <label>Average confidence</label>
+            <strong id="averageConfidence">—</strong>
+            <small>Intent model confidence</small>
+        </article>
+
+        <article class="card">
+            <label>Average response time</label>
+            <strong id="averageResponseTime">—</strong>
+            <small>Per chatbot response</small>
+        </article>
+
+    </section>
+
+    <section class="two-col">
+
+        <article class="card">
+            <h2>Intent distribution</h2>
+            <p class="muted">Most common message categories</p>
+
+            <div id="intentChart" class="bars">
+                Send a message in AI Assistant to populate this chart.
+            </div>
+        </article>
+
+        <article class="card">
+            <h2>Sentiment overview</h2>
+            <p class="muted">Emotional tone of conversations</p>
+
+            <div class="sentiment">
+
+                <div class="ring" id="sentimentRing">
+                    <div>
+                        <strong id="sentimentCount">0</strong>
+                        <small>analyzed</small>
+                    </div>
+                </div>
+
+                <div class="legend">
+                    <p>🟢 Positive <b id="positiveCount">0</b></p>
+                    <p>🟡 Neutral <b id="neutralCount">0</b></p>
+                    <p>🔴 Negative <b id="negativeCount">0</b></p>
+                </div>
+
+            </div>
+
+            <p class="muted" id="sentimentNote">
+                Statistics appear after successful messages.
+            </p>
+        </article>
+
+    </section>
+
+    <article class="card">
+        <div class="row">
+            <div>
+                <h2>Recent conversation activity</h2>
+                <p class="muted">Latest messages and detected intents</p>
+            </div>
+
+            <a href="/insights">View insights →</a>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>USER MESSAGE</th>
+                        <th>DETECTED INTENT</th>
+                        <th>CONFIDENCE</th>
+                        <th>TIME</th>
+                    </tr>
+                </thead>
+
+                <tbody id="activityTableBody">
+                    <tr>
+                        <td colspan="4">No activity yet.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+
+    <footer>Dynamic AI Chatbot · Zidio Internship</footer>
+
+</main>
+</body>
+</html>

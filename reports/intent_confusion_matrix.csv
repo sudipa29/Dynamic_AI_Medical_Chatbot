@@ -1,0 +1,8 @@
+,Predicted: definition,Predicted: symptoms,Predicted: causes_risk_factors,Predicted: prevention,Predicted: diagnosis_tests,Predicted: general_management,Predicted: when_to_seek_care
+Actual: definition,100,0,0,0,0,0,0
+Actual: symptoms,0,100,0,0,0,0,0
+Actual: causes_risk_factors,0,0,100,0,0,0,0
+Actual: prevention,0,0,0,100,0,0,0
+Actual: diagnosis_tests,0,0,0,0,100,0,0
+Actual: general_management,0,0,0,0,0,100,0
+Actual: when_to_seek_care,0,0,0,0,0,0,100

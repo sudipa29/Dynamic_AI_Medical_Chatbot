@@ -1,70 +1,42 @@
 
+"""
+Text preprocessing utilities for the Medical AI Chatbot.
+"""
+
 import re
+from typing import List
 
 
-# ============================================================
-# TEXT CLEANING FUNCTION
-# ============================================================
+def clean_text(text: str) -> str:
+    """
+    Normalize text for intent detection and medical knowledge retrieval.
+    Preserves meaningful characters in terms such as COVID-19.
+    """
+    if text is None:
+        return ""
 
-def clean_text(text):
+    text = str(text).lower().strip()
 
-    text = str(text)
+    # Normalize whitespace.
+    text = re.sub(r"\s+", " ", text)
 
-    text = text.lower()
+    # Keep letters, digits, spaces, and hyphens.
+    # This preserves medical terms such as COVID-19.
+    text = re.sub(r"[^\w\s-]", " ", text)
 
-    text = re.sub(
-        r"[^a-zA-Z0-9\s]",
-        "",
-        text
-    )
-
-    text = re.sub(
-        r"\s+",
-        " ",
-        text
-    ).strip()
+    # Remove extra spaces created during cleaning.
+    text = re.sub(r"\s+", " ", text).strip()
 
     return text
 
 
-# ============================================================
-# TEST
-# ============================================================
+def tokenize_text(text: str) -> List[str]:
+    """
+    Convert cleaned text into a list of tokens.
+    """
+    cleaned_text = clean_text(text)
 
-if __name__ == "__main__":
+    if not cleaned_text:
+        return []
 
-    test_sentences = [
-        "Hello!!!",
-        "Where IS my order???",
-        "  I WANT A REFUND  ",
-        "My payment failed!!!",
-        "Can you tell me about this product?"
-    ]
-
-    print("=" * 60)
-    print("TEXT PREPROCESSING TEST")
-    print("=" * 60)
-
-    for sentence in test_sentences:
-
-        cleaned = clean_text(sentence)
-
-        print(
-            f"\nOriginal : {sentence}"
-        )
-
-        print(
-            f"Cleaned  : {cleaned}"
-        )
-
-    print(
-        "\n" + "=" * 60
-    )
-
-    print(
-        "PREPROCESSING TEST COMPLETED"
-    )
-
-    print(
-        "=" * 60
-    )
+    return cleaned_text.split()

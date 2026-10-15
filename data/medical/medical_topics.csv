@@ -1,0 +1,26 @@
+topic_id,topic_name,category
+1,Diabetes,Chronic Disease
+2,Hypertension,Cardiovascular
+3,Asthma,Respiratory
+4,Migraine,Neurological
+5,Common Cold,Infectious/Respiratory
+6,Influenza,Infectious/Respiratory
+7,Dehydration,General Health
+8,Anemia,Blood Disorder
+9,Obesity,Metabolic
+10,High Cholesterol,Metabolic
+11,Acid Reflux / GERD,Digestive
+12,Gastritis,Digestive
+13,Food Poisoning,Digestive/Infectious
+14,Allergy,Immune System
+15,Arthritis,Musculoskeletal
+16,Pneumonia,Respiratory/Infectious
+17,Urinary Tract Infection (UTI),Urinary
+18,Vitamin D Deficiency,Nutritional
+19,COVID-19,Infectious/Respiratory
+20,Heart Disease,Cardiovascular
+21,Thyroid Disorders,Endocrine
+22,Depression,Mental Health
+23,Anxiety,Mental Health
+24,Insomnia,Sleep
+25,Kidney Stones,Urinary

@@ -1,0 +1,265 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Medical AI Assistant | {{ app_name }}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script defer
+            src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+
+<body data-page="assistant">
+
+    {% include "_nav.html" %}
+
+    <main class="shell chat-shell">
+
+        <!-- Page heading -->
+        <header class="page-head">
+            <div>
+                <p class="eyebrow">MEDICAL AI / HEALTH ASSISTANT</p>
+
+                <h1>Medical AI Assistant</h1>
+
+                <p>
+                    Explore health information, medical topics,
+                    symptoms and preventive healthcare.
+                </p>
+            </div>
+
+            <button id="newChatButton"
+                    class="button"
+                    type="button">
+                + New conversation
+            </button>
+        </header>
+
+        <!-- Medical welcome banner -->
+        <section class="card medical-welcome">
+            <div class="medical-welcome-content">
+                <div class="medical-symbol" aria-hidden="true">
+                    +
+                </div>
+
+                <div>
+                    <p class="eyebrow">YOUR HEALTH INFORMATION COMPANION</p>
+
+                    <h2>How can I help you today?</h2>
+
+                    <p>
+                        Ask questions about health conditions, common
+                        symptoms, disease prevention and general
+                        medical information.
+                    </p>
+                </div>
+            </div>
+
+            <div class="medical-notice">
+                <strong>Important health notice</strong>
+                <p>
+                    This assistant provides general educational
+                    information, not a medical diagnosis or a substitute
+                    for professional medical care. Consult a qualified
+                    healthcare professional for personal medical advice.
+                    For emergencies, contact your local emergency service.
+                </p>
+            </div>
+        </section>
+
+        <!-- Chat workspace -->
+        <section class="card chat-card">
+
+            <div class="chat-head">
+                <div class="bot-icon" aria-hidden="true">+</div>
+
+                <div>
+                    <b>Medical AI Assistant</b>
+                    <p class="muted">
+                        AI-powered health information and assistance
+                    </p>
+                </div>
+
+                <span class="ready">● Ready</span>
+            </div>
+
+            <!-- Messages are rendered here by app.js -->
+            <div id="chatMessages"
+                 class="messages"
+                 aria-live="polite">
+
+                <div class="msg bot">
+                    <span class="msg-icon" aria-hidden="true">+</span>
+
+                    <div>
+                        <small>Medical AI · Welcome</small>
+
+                        <div class="bubble">
+                            Welcome to the Medical AI Assistant.
+
+                            <p>
+                                I can help you explore general health
+                                information, understand common medical
+                                terms and learn about preventive care.
+                            </p>
+
+                            <p>
+                                What would you like to learn about today?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="typingIndicator" class="typing hidden">
+                Preparing your response…
+            </div>
+
+            <div id="chatError"
+                 class="error hidden"
+                 role="alert">
+            </div>
+
+            <!-- Medical quick questions -->
+            <div class="suggestions medical-suggestions">
+                <small>EXPLORE HEALTH TOPICS</small>
+
+                <div>
+                    <button class="suggestion"
+                            type="button"
+                            data-message="What are common symptoms of diabetes?">
+                        Diabetes symptoms
+                    </button>
+
+                    <button class="suggestion"
+                            type="button"
+                            data-message="What are common causes of high blood pressure?">
+                        Blood pressure
+                    </button>
+
+                    <button class="suggestion"
+                            type="button"
+                            data-message="How can I maintain a healthy immune system?">
+                        Preventive healthcare
+                    </button>
+
+                    <button class="suggestion"
+                            type="button"
+                            data-message="What are common causes of headaches and when should someone seek medical care?">
+                        Common symptoms
+                    </button>
+
+                    <button class="suggestion"
+                            type="button"
+                            data-message="What are some general tips for maintaining a balanced diet?">
+                        Healthy nutrition
+                    </button>
+
+                    <button class="suggestion"
+                            type="button"
+                            data-message="Explain the difference between a virus and a bacterial infection.">
+                        Medical knowledge
+                    </button>
+                </div>
+            </div>
+
+            <!-- Message composer -->
+            <form id="chatForm" class="composer">
+
+                <textarea
+                    id="messageInput"
+                    maxlength="4000"
+                    rows="1"
+                    placeholder="Ask a health or medical information question…"
+                    aria-label="Enter your medical information question"
+                    required>
+                </textarea>
+
+                <div class="composer-foot">
+                    <small>
+                        Enter to send · Shift + Enter for a new line
+                    </small>
+
+                    <div>
+                        <small id="characterCount">0 / 4000</small>
+
+                        <button id="sendButton"
+                                class="button primary"
+                                type="submit">
+
+                            <span id="sendButtonText">Send</span>
+                            ↑
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="chat-foot">
+                <span>Educational information only · Not a diagnosis</span>
+                <span id="messageStatus">Ready to assist</span>
+            </div>
+
+        </section>
+
+        <!-- Medical information shortcuts -->
+        <section class="medical-topic-grid">
+
+            <article class="card medical-topic-card">
+                <div class="topic-icon">+</div>
+                <h3>Symptoms & Conditions</h3>
+                <p>
+                    Learn general information about common symptoms
+                    and health conditions.
+                </p>
+                <button class="text-action"
+                        type="button"
+                        data-message="Explain how common symptoms are evaluated and when medical attention may be needed.">
+                    Explore topics →
+                </button>
+            </article>
+
+            <article class="card medical-topic-card">
+                <div class="topic-icon">♥</div>
+                <h3>Preventive Healthcare</h3>
+                <p>
+                    Explore healthy habits, screening concepts
+                    and disease prevention.
+                </p>
+                <button class="text-action"
+                        type="button"
+                        data-message="Explain the basics of preventive healthcare and routine health screenings.">
+                    Learn more →
+                </button>
+            </article>
+
+            <article class="card medical-topic-card">
+                <div class="topic-icon">✚</div>
+                <h3>Medical Knowledge</h3>
+                <p>
+                    Understand medical terminology, diseases
+                    and general healthcare concepts.
+                </p>
+                <button class="text-action"
+                        type="button"
+                        data-message="Explain some important basic medical terms in simple language.">
+                    Discover more →
+                </button>
+            </article>
+
+        </section>
+
+        <footer>
+            <a href="/insights">View medical conversation insights →</a>
+        </footer>
+
+    </main>
+
+</body>
+</html>

@@ -1,360 +1,782 @@
-import pandas as pd
 
-from sklearn.model_selection import train_test_split
+"""
+Medical AI Chatbot - Intent Detection
+
+Training data:
+    data/medical/medical_intents.csv
+
+Knowledge source:
+    data/medical/medical_knowledge.csv
+
+Supports:
+    predict_intent(text)
+    predict_intent_details(text)
+
+Returns:
+    (intent, confidence, second_intent, second_confidence, margin)
+"""
+
+import re
+from pathlib import Path
+from typing import Optional, Tuple
+
+import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report, accuracy_score
-
-from app.preprocessing import clean_text
 
 
 # ============================================================
-# 1. LOAD DATASET
+# 1. CONFIGURATION
 # ============================================================
 
-DATA_PATH = "data/raw/intents.csv"
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-df = pd.read_csv(DATA_PATH)
-
-df["clean_text"] = df["text"].apply(clean_text)
-
-
-# ============================================================
-# 2. PREPARE FEATURES AND TARGET
-# ============================================================
-
-X = df["clean_text"]
-y = df["intent"]
-
-
-# ============================================================
-# 3. TRAIN / TEST SPLIT
-# ============================================================
-
-X_train, X_test, y_train, y_test = train_test_split(
-    X,
-    y,
-    test_size=0.20,
-    random_state=42,
-    stratify=y
+INTENTS_DATA_PATH = (
+    BASE_DIR / "data" / "medical" / "medical_intents.csv"
 )
 
-
-# ============================================================
-# 4. TF-IDF VECTORIZATION
-# ============================================================
-
-vectorizer = TfidfVectorizer(
-    ngram_range=(1, 2),
-    max_features=5000
+MEDICAL_DATA_PATH = (
+    BASE_DIR / "data" / "medical" / "medical_knowledge.csv"
 )
 
-X_train_tfidf = vectorizer.fit_transform(X_train)
-X_test_tfidf = vectorizer.transform(X_test)
+EXPECTED_INTENTS = [
+    "definition",
+    "symptoms",
+    "causes_risk_factors",
+    "prevention",
+    "diagnosis_tests",
+    "general_management",
+    "when_to_seek_care",
+]
+
+MIN_CONFIDENCE = 0.25
+MIN_CONFIDENCE_MARGIN = 0.05
+
+vectorizer = None
+intent_model = None
+training_error = None
 
 
 # ============================================================
-# 5. LOGISTIC REGRESSION MODEL
+# 2. TEXT NORMALIZATION
 # ============================================================
 
-model = LogisticRegression(
-    max_iter=1000
-)
+def normalize_text(text: str) -> str:
+    """Normalize text while preserving medically meaningful terms."""
 
-model.fit(X_train_tfidf, y_train)
+    if text is None:
+        return ""
 
+    text = str(text).lower().strip()
+    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"[^\w\s-]", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
 
-# ============================================================
-# 6. MODEL EVALUATION
-# ============================================================
-
-y_pred = model.predict(X_test_tfidf)
-
-accuracy = accuracy_score(y_test, y_pred)
+    return text
 
 
 # ============================================================
-# 7. INTENT PREDICTION WITH DETAILS
+# 3. BASIC CONVERSATION INTENTS
 # ============================================================
 
-def predict_intent_details(text):
+BASIC_PHRASES = {
+    "greeting": [
+        "hello",
+        "hi",
+        "hey",
+        "good morning",
+        "good afternoon",
+        "good evening",
+        "how are you",
+    ],
+    "thank_you": [
+        "thank you",
+        "thanks",
+        "thank you so much",
+        "thanks a lot",
+    ],
+    "goodbye": [
+        "bye",
+        "goodbye",
+        "see you",
+        "see you later",
+        "talk to you later",
+    ],
+}
+
+
+def detect_basic_intent(text: str) -> Optional[str]:
+    """Recognize exact greetings, thanks, and goodbyes."""
+
+    cleaned = normalize_text(text)
+
+    if not cleaned:
+        return "unknown"
+
+    for intent, phrases in BASIC_PHRASES.items():
+        for phrase in phrases:
+            if cleaned == phrase:
+                return intent
+
+    return None
+
+
+# ============================================================
+# 4. MEDICAL TOPICS AND ALIASES
+# ============================================================
+
+TOPIC_ALIASES = {
+    "acid reflux": [
+        "gerd",
+        "gastroesophageal reflux disease",
+        "gastro-oesophageal reflux disease",
+    ],
+    "allergy": [
+        "allergies",
+        "allergic reaction",
+    ],
+    "anemia": [
+        "anaemia",
+        "low hemoglobin",
+        "low haemoglobin",
+    ],
+    "anxiety": ["anxiety disorder"],
+    "arthritis": ["joint inflammation"],
+    "asthma": ["asthmatic condition"],
+    "covid-19": [
+        "covid",
+        "covid 19",
+        "coronavirus",
+        "corona virus",
+    ],
+    "common cold": [
+        "cold",
+        "runny nose and cold",
+    ],
+    "dehydration": [
+        "dehydrated",
+        "lack of body fluids",
+    ],
+    "depression": ["depressive disorder"],
+    "diabetes": [
+        "diabetes mellitus",
+        "high blood sugar",
+        "type 1 diabetes",
+        "type 2 diabetes",
+        "type one diabetes",
+        "type two diabetes",
+    ],
+    "food poisoning": [
+        "foodborne illness",
+        "food-borne illness",
+    ],
+    "gastritis": ["stomach inflammation"],
+    "heart disease": ["cardiovascular disease"],
+    "heart attack": ["myocardial infarction"],
+    "high cholesterol": ["hypercholesterolemia"],
+    "hypertension": [
+        "high blood pressure",
+        "elevated blood pressure",
+    ],
+    "influenza": ["flu", "seasonal flu"],
+    "migraine": ["migraine headache"],
+    "obesity": ["overweight"],
+    "pneumonia": ["lung infection"],
+    "thyroid disorders": [
+        "thyroid disease",
+        "thyroid problem",
+        "thyroid problems",
+    ],
+    "uti": [
+        "urinary tract infection",
+        "urine infection",
+    ],
+    "vitamin d deficiency": ["low vitamin d"],
+}
+
+MEDICAL_CUES = {
+    "disease", "condition", "symptom", "symptoms",
+    "medical", "health", "treatment", "managed",
+    "management", "diagnosis", "diagnosed",
+    "prevention", "prevented", "cause", "causes",
+    "risk", "risks", "doctor", "physician",
+    "medicine", "medication", "pain", "fever",
+    "cough", "headache", "breathing", "infection",
+    "illness", "sick", "suffering", "blood pressure",
+    "lifestyle", "diagnose", "prevent", "manage",
+    "treat", "treatment", "tests", "test",
+    "complications", "warning signs",
+}
+
+
+def load_supported_topics() -> list:
+    """Load topic names from the medical knowledge base."""
+
+    topics = set(TOPIC_ALIASES.keys())
+
+    try:
+        if MEDICAL_DATA_PATH.exists():
+            df = pd.read_csv(MEDICAL_DATA_PATH)
+
+            if "topic" in df.columns:
+                topics.update(
+                    str(topic).strip().lower()
+                    for topic in df["topic"].dropna()
+                    if str(topic).strip()
+                )
+
+    except Exception as error:
+        print(
+            "[Intent Detection] Could not load medical topics: "
+            f"{error}"
+        )
+
+    return sorted(topics, key=len, reverse=True)
+
+
+SUPPORTED_TOPICS = load_supported_topics()
+
+
+def _contains_phrase(text: str, phrase: str) -> bool:
+    """Check for a phrase without matching inside another word."""
+
+    pattern = (
+        r"(?<!\w)"
+        + re.escape(phrase.lower()).replace(r"\ ", r"\s+")
+        + r"(?!\w)"
+    )
+
+    return bool(re.search(pattern, text))
+
+
+def detect_medical_topic(text: str) -> Optional[str]:
+    """Identify a supported medical topic or its known alias."""
+
+    cleaned = normalize_text(text)
+
+    if not cleaned:
+        return None
+
+    # Match the longest supported topic first.
+    for topic in SUPPORTED_TOPICS:
+        if _contains_phrase(cleaned, topic):
+            return topic.title()
+
+    # Check alternate names.
+    for topic, aliases in TOPIC_ALIASES.items():
+        for alias in sorted(aliases, key=len, reverse=True):
+            if _contains_phrase(cleaned, alias):
+                return topic.title()
+
+    return None
+
+
+def has_medical_context(text: str) -> bool:
+    """Determine whether a message appears medically relevant."""
+
+    cleaned = normalize_text(text)
+
+    if not cleaned:
+        return False
+
+    if detect_medical_topic(cleaned):
+        return True
+
+    return any(
+        _contains_phrase(cleaned, cue)
+        for cue in MEDICAL_CUES
+    )
+
+
+# ============================================================
+# 5. EXPLICIT MEDICAL INTENT RULES
+# ============================================================
+
+INTENT_PATTERNS = {
+    "when_to_seek_care": [
+        r"\bwhen should i see a doctor\b",
+        r"\bwhen should i seek medical care\b",
+        r"\bwhen should someone seek medical care\b",
+        r"\bwhen to seek medical care\b",
+        r"\bwhen should i get medical help\b",
+        r"\bwhen is it an emergency\b",
+        r"\bwhen should i go to hospital\b",
+        r"\bwhen should i go to the hospital\b",
+        r"\bwhat are the warning signs\b",
+        r"\bwhen should i worry\b",
+        r"\bwhen is medical attention needed\b",
+        r"\bwhen should .* seek medical care\b",
+        r"\bwhen to get medical attention\b",
+        r"\bwhen do i need medical help\b",
+    ],
+
+    "diagnosis_tests": [
+        r"\bhow is .{1,80}\bdiagnosed\b",
+        r"\bhow do doctors diagnose\b",
+        r"\bhow can .{1,80}\bbe diagnosed\b",
+        r"\bwhat tests are used\b",
+        r"\bwhat tests diagnose\b",
+        r"\bwhich tests are needed\b",
+        r"\bdiagnosis of\b",
+        r"\btests for\b",
+        r"\bhow do doctors test for\b",
+        r"\bwhat tests are needed\b",
+        r"\bwhat test is used\b",
+        r"\bhow can doctors confirm\b",
+        r"\bhow is .{1,80}\bidentified\b",
+    ],
+
+    "causes_risk_factors": [
+        r"\bwhat causes\b",
+        r"\bwhat are the causes\b",
+        r"\bwhat causes it\b",
+        r"\bwhat causes this\b",
+        r"\bwhat are its causes\b",
+        r"\bwhy does .{1,100}\bhappen\b",
+        r"\bwhy does .{1,100}\bbecome\b",
+        r"\bwhy does .{1,100}\bget\b",
+        r"\bwhy does .{1,100}\brise\b",
+        r"\bwhy does .{1,100}\bincrease\b",
+        r"\bwhy do people get\b",
+        r"\bwhat are the risk factors\b",
+        r"\brisk factors for\b",
+        r"\bwhat increases the risk\b",
+        r"\bwhy do i get\b",
+        r"\bwhat triggers\b",
+        r"\bwhat are the triggers\b",
+        r"\bwhat leads to\b",
+        r"\bwhat makes .{1,80}\bhigh\b",
+        r"\bwhat makes .{1,80}\blow\b",
+        r"\bwhat is the reason for\b",
+        r"\bwhat might cause\b",
+        r"\bwhat can cause\b",
+        r"\bwhat are common causes\b",
+        r"\bwhat are the main causes\b",
+        r"\bwhy is .{1,80}\bhigh\b",
+        r"\bwhy is .{1,80}\belevated\b",
+        r"\bwhat factors contribute to\b",
+    ],
+
+    "general_management": [
+        r"\bhow can it be managed\b",
+        r"\bhow can this be managed\b",
+        r"\bhow can .{1,80}\bbe managed\b",
+        r"\bhow is it managed\b",
+        r"\bhow is this managed\b",
+        r"\bhow is .{1,80}\bmanaged\b",
+        r"\bhow can i manage it\b",
+        r"\bhow do i manage it\b",
+        r"\bhow to manage it\b",
+        r"\bhow can .{1,80}\bmanage\b",
+        r"\bhow do .{1,80}\bmanage\b",
+        r"\bmanagement of\b",
+        r"\bgeneral management of\b",
+        r"\bhow to treat\b",
+        r"\bhow is it treated\b",
+        r"\bhow can it be treated\b",
+        r"\bhow do you treat it\b",
+        r"\bwhat is its treatment\b",
+        r"\bwhat is the treatment\b",
+        r"\bwhat are the treatment options\b",
+        r"\bwhat about treatment\b",
+        r"\btreatment for\b",
+        r"\bhow can i relieve\b",
+        r"\bways to relieve\b",
+        r"\bwhat helps with\b",
+        r"\bwhat can help with\b",
+        r"\bhow to deal with\b",
+        r"\bcare for .{1,80}\b",
+        r"\bwhat lifestyle changes\b",
+        r"\bwhich lifestyle changes\b",
+        r"\blifestyle changes .*manage\b",
+        r"\blifestyle changes .*help\b",
+        r"\bwhat helps manage\b",
+        r"\bwhat can help manage\b",
+        r"\bwhat may help manage\b",
+        r"\bwhat might help manage\b",
+        r"\bhow can i control\b",
+        r"\bhow to control\b",
+        r"\bways to manage\b",
+        r"\bways to control\b",
+        r"\bhow can .* improve\b",
+        r"\bhow can .* relieve\b",
+        r"\bwhat should i do to manage\b",
+        r"\bwhat can i do to manage\b",
+        r"\bhow can .* symptoms be relieved\b",
+        r"\bhow can .* symptoms be managed\b",
+        r"\bwhat are the management options\b",
+    ],
+
+    "prevention": [
+        r"\bhow can it be prevented\b",
+        r"\bhow can .{1,80}\bbe prevented\b",
+        r"\bhow to prevent\b",
+        r"\bhow can i prevent\b",
+        r"\bways to prevent\b",
+        r"\bhow do i avoid\b",
+        r"\bhow can .{1,80}\bbe avoided\b",
+        r"\bhow to avoid\b",
+        r"\bprevention of\b",
+        r"\bhow can i reduce the risk\b",
+        r"\bhow to lower the risk\b",
+        r"\bwhat about prevention\b",
+        r"\bhow about prevention\b",
+        r"\bwhat about preventing\b",
+        r"\bhow can i protect myself\b",
+        r"\bwhat can i do to prevent\b",
+        r"\bhow do i prevent\b",
+        r"\bhow can .* reduce the risk\b",
+        r"\bwhat measures prevent\b",
+        r"\bways to reduce the risk\b",
+        r"\bcan .* be prevented\b",
+        r"\bhow can someone prevent\b",
+    ],
+
+    "symptoms": [
+        r"\bhow can i tell if .{1,80}\bcausing symptoms\b",
+        r"\bhow can i tell whether .{1,80}\bcausing symptoms\b",
+        r"\bhow do i tell if .{1,80}\bcausing symptoms\b",
+        r"\bwhat are its symptoms\b",
+        r"\bwhat are the symptoms\b",
+        r"\bwhat symptoms does .{1,80}\bcause\b",
+        r"\bwhat are the signs and symptoms\b",
+        r"\bwhat symptoms can it cause\b",
+        r"\bsymptoms of\b",
+        r"\bsigns of\b",
+        r"\bhow does it feel\b",
+        r"\bwhat does .{1,80}\bfeel like\b",
+        r"\bi am suffering from\b",
+        r"\bi have symptoms of\b",
+        r"\bi am experiencing\b",
+        r"\bi feel\b",
+        r"\bi have\b.{1,80}\bpain\b",
+        r"\bwhat are common symptoms\b",
+        r"\bwhat signs should i look for\b",
+        r"\bhow can i recognize\b",
+        r"\bhow do i know if i have\b",
+    ],
+
+    "definition": [
+        r"\bwhat is\b",
+        r"\bwhat are\b",
+        r"\bdefine\b",
+        r"\bdefinition of\b",
+        r"\bmeaning of\b",
+        r"\bexplain\b",
+        r"\btell me about\b",
+        r"\bwhat does .{1,80}\bmean\b",
+    ],
+}
+
+
+def detect_explicit_medical_intent(
+    text: str,
+) -> Optional[str]:
+    """Detect intent from clear question patterns."""
+
+    cleaned = normalize_text(text)
+
+    if not cleaned or not has_medical_context(cleaned):
+        return None
+
+    # More specific questions must be checked before general ones.
+    intent_priority = [
+        "when_to_seek_care",
+        "diagnosis_tests",
+        "causes_risk_factors",
+        "general_management",
+        "prevention",
+        "symptoms",
+        "definition",
+    ]
+
+    for intent in intent_priority:
+        for pattern in INTENT_PATTERNS.get(intent, []):
+            if re.search(pattern, cleaned):
+                return intent
+
+    return None
+
+
+# ============================================================
+# 6. TRAIN THE MODEL FROM MEDICAL INTENT EXAMPLES
+# ============================================================
+
+def train_intent_model() -> None:
+    """Train TF-IDF and Logistic Regression from question examples."""
+
+    global vectorizer, intent_model, training_error
+
+    vectorizer = None
+    intent_model = None
+    training_error = None
+
+    try:
+        if not INTENTS_DATA_PATH.exists():
+            training_error = (
+                "Intent dataset not found: "
+                f"{INTENTS_DATA_PATH}"
+            )
+            print(f"[Intent Detection] {training_error}")
+            return
+
+        df = pd.read_csv(INTENTS_DATA_PATH)
+
+        required_columns = {"text", "intent"}
+
+        if not required_columns.issubset(df.columns):
+            training_error = (
+                "medical_intents.csv must contain "
+                "'text' and 'intent' columns."
+            )
+            print(f"[Intent Detection] {training_error}")
+            return
+
+        df = df[["text", "intent"]].dropna().copy()
+
+        df["text"] = df["text"].map(normalize_text)
+        df["intent"] = (
+            df["intent"].astype(str).str.strip().str.lower()
+        )
+
+        df = df[df["text"] != ""]
+        df = df[df["intent"].isin(EXPECTED_INTENTS)]
+
+        df = df.drop_duplicates(
+            subset=["text", "intent"]
+        ).reset_index(drop=True)
+
+        if df.empty:
+            training_error = (
+                "No valid question examples were found."
+            )
+            print(f"[Intent Detection] {training_error}")
+            return
+
+        missing_intents = (
+            set(EXPECTED_INTENTS) - set(df["intent"].unique())
+        )
+
+        if missing_intents:
+            training_error = (
+                "Training dataset is missing these intents: "
+                + ", ".join(sorted(missing_intents))
+            )
+            print(f"[Intent Detection] {training_error}")
+            return
+
+        vectorizer = TfidfVectorizer(
+            ngram_range=(1, 2),
+            max_features=10000,
+            sublinear_tf=True,
+            strip_accents="unicode",
+        )
+
+        X = vectorizer.fit_transform(df["text"])
+        y = df["intent"]
+
+        intent_model = LogisticRegression(
+            max_iter=2000,
+            class_weight=None,
+            random_state=42,
+        )
+
+        intent_model.fit(X, y)
+
+        print(
+            "[Intent Detection] Model trained from "
+            "medical_intents.csv: "
+            f"{len(df)} unique examples, "
+            f"{y.nunique()} intents."
+        )
+
+    except Exception as error:
+        training_error = str(error)
+        vectorizer = None
+        intent_model = None
+
+        print(
+            "[Intent Detection] Model training failed: "
+            f"{error}"
+        )
+
+
+# Train once when this module is imported.
+train_intent_model()
+
+
+# ============================================================
+# 7. MODEL PROBABILITIES
+# ============================================================
+
+def get_model_probabilities(text: str) -> dict:
+    """Return model probabilities for every trained intent."""
+
+    if vectorizer is None or intent_model is None:
+        return {}
+
+    cleaned = normalize_text(text)
+
+    if not cleaned:
+        return {}
+
+    try:
+        X = vectorizer.transform([cleaned])
+        probabilities = intent_model.predict_proba(X)[0]
+
+        return {
+            str(intent): float(probability)
+            for intent, probability in zip(
+                intent_model.classes_,
+                probabilities,
+            )
+        }
+
+    except Exception as error:
+        print(
+            "[Intent Detection] Probability calculation failed: "
+            f"{error}"
+        )
+        return {}
+
+
+def build_prediction(
+    selected_intent: str,
+    probabilities: dict,
+) -> Tuple[str, float, str, float, float]:
     """
-    Predict the user's intent and provide confidence details.
+    Build a result for a selected intent.
 
-    Runtime fallback rules:
-
-    1. If confidence margin < 5%, return unknown.
-    2. If confidence < 15% AND margin < 8%, return unknown.
-    3. Otherwise, keep the model's top prediction.
+    Confidence is the model's probability for that intent.
+    Explicit rules can select the intent even when its probability
+    is low. The returned score must not be interpreted as certainty.
     """
 
-    cleaned_text = clean_text(text)
+    if not probabilities:
+        return (
+            selected_intent,
+            0.0,
+            "unknown",
+            0.0,
+            0.0,
+        )
 
-    text_vector = vectorizer.transform([cleaned_text])
+    confidence = float(
+        probabilities.get(selected_intent, 0.0)
+    )
 
-    probabilities = model.predict_proba(text_vector)[0]
+    alternatives = [
+        (intent, probability)
+        for intent, probability in probabilities.items()
+        if intent != selected_intent
+    ]
 
-    # Sort probabilities from highest to lowest
-    sorted_indexes = probabilities.argsort()[::-1]
+    alternatives.sort(
+        key=lambda item: item[1],
+        reverse=True,
+    )
 
-    # --------------------------------------------------------
-    # Top prediction
-    # --------------------------------------------------------
+    if alternatives:
+        second_intent, second_confidence = alternatives[0]
+    else:
+        second_intent = "unknown"
+        second_confidence = 0.0
 
-    top_index = sorted_indexes[0]
-
-    original_top_intent = model.classes_[top_index]
-
-    top_confidence = probabilities[top_index]
-
-    # --------------------------------------------------------
-    # Second prediction
-    # --------------------------------------------------------
-
-    second_index = sorted_indexes[1]
-
-    second_intent = model.classes_[second_index]
-
-    second_confidence = probabilities[second_index]
-
-    # --------------------------------------------------------
-    # Confidence margin
-    # --------------------------------------------------------
-
-    confidence_margin = top_confidence - second_confidence
-
-    # --------------------------------------------------------
-    # Runtime fallback
-    # --------------------------------------------------------
-
-    final_intent = original_top_intent
-
-    # Rule 1:
-    # Very small difference between top two intents
-    if confidence_margin < 0.05:
-
-        final_intent = "unknown"
-
-    # Rule 2:
-    # Low confidence and small difference between intents
-    elif top_confidence < 0.15 and confidence_margin < 0.08:
-
-        final_intent = "unknown"
+    margin = confidence - second_confidence
 
     return (
-        final_intent,
-        top_confidence,
+        selected_intent,
+        confidence,
         second_intent,
-        second_confidence,
-        confidence_margin
+        float(second_confidence),
+        float(margin),
     )
 
 
 # ============================================================
-# 8. SIMPLE PREDICTION FUNCTION
+# 8. INTENT PREDICTION
 # ============================================================
 
-def predict_intent(text):
+def predict_intent_details(
+    text: str,
+) -> Tuple[str, float, str, float, float]:
     """
-    Simple intent prediction function.
+    Return:
+        (intent, confidence, second_intent,
+         second_confidence, confidence_margin)
 
-    This returns the final intent after applying
-    the runtime fallback rules.
+    Confidence values are fractions between 0 and 1.
+    Multiply by 100 when displaying percentages.
     """
 
-    (
-        final_intent,
-        top_confidence,
-        _,
-        _,
-        _
-    ) = predict_intent_details(text)
+    cleaned = normalize_text(text)
 
-    return final_intent, top_confidence
+    if not cleaned:
+        return (
+            "unknown",
+            0.0,
+            "unknown",
+            0.0,
+            0.0,
+        )
 
+    # Basic conversation intents.
+    basic_intent = detect_basic_intent(cleaned)
 
-# ============================================================
-# 9. CONFIDENCE ANALYSIS
-# ============================================================
+    if basic_intent:
+        return (
+            basic_intent,
+            1.0,
+            "unknown",
+            0.0,
+            1.0,
+        )
 
-def analyze_test_confidence():
+    # Reject clearly unsupported non-medical questions.
+    if not has_medical_context(cleaned):
+        return (
+            "unknown",
+            0.0,
+            "unknown",
+            0.0,
+            0.0,
+        )
 
-    probabilities = model.predict_proba(X_test_tfidf)
+    # Calculate model probabilities.
+    probabilities = get_model_probabilities(cleaned)
 
-    top_confidences = probabilities.max(axis=1)
+    # Clear question patterns take priority over uncertain ML guesses.
+    explicit_intent = detect_explicit_medical_intent(cleaned)
 
-    predicted_labels = model.classes_[probabilities.argmax(axis=1)]
+    if explicit_intent:
+        return build_prediction(
+            explicit_intent,
+            probabilities,
+        )
 
-    confidence_df = pd.DataFrame({
-        "actual_intent": y_test.values,
-        "predicted_intent": predicted_labels,
-        "confidence": top_confidences
-    })
+    if not probabilities:
+        return (
+            "unknown",
+            0.0,
+            "unknown",
+            0.0,
+            0.0,
+        )
 
-    confidence_df["correct"] = (
-        confidence_df["actual_intent"]
-        == confidence_df["predicted_intent"]
+    ranked = sorted(
+        probabilities.items(),
+        key=lambda item: item[1],
+        reverse=True,
     )
 
-    correct_confidence = confidence_df.loc[
-        confidence_df["correct"],
-        "confidence"
-    ]
+    best_intent, best_confidence = ranked[0]
 
-    incorrect_confidence = confidence_df.loc[
-        ~confidence_df["correct"],
-        "confidence"
-    ]
+    if len(ranked) > 1:
+        second_intent, second_confidence = ranked[1]
+    else:
+        second_intent = "unknown"
+        second_confidence = 0.0
 
-    print("\n" + "=" * 60)
-    print("CONFIDENCE ANALYSIS")
-    print("=" * 60)
+    margin = best_confidence - second_confidence
 
-    print(
-        f"\nMinimum Confidence: "
-        f"{confidence_df['confidence'].min():.2%}"
-    )
-
-    print(
-        f"Maximum Confidence: "
-        f"{confidence_df['confidence'].max():.2%}"
-    )
-
-    print(
-        f"Average Confidence: "
-        f"{confidence_df['confidence'].mean():.2%}"
-    )
-
-    print(
-        f"\nAverage Confidence - Correct Predictions: "
-        f"{correct_confidence.mean():.2%}"
-    )
-
-    if len(incorrect_confidence) > 0:
-
-        print(
-            f"Average Confidence - Incorrect Predictions: "
-            f"{incorrect_confidence.mean():.2%}"
-        )
-
-        print(
-            f"\nLowest Confidence - Incorrect Predictions: "
-            f"{incorrect_confidence.min():.2%}"
-        )
-
-        print(
-            f"Highest Confidence - Incorrect Predictions: "
-            f"{incorrect_confidence.max():.2%}"
-        )
-
-
-# ============================================================
-# 10. MAIN PROGRAM
-# ============================================================
-
-if __name__ == "__main__":
-
-    print("=" * 60)
-    print("INTENT CLASSIFICATION MODEL")
-    print("=" * 60)
-
-    print(f"\nDataset Records: {len(df)}")
-    print(f"Unique Intents: {df['intent'].nunique()}")
-    print(f"Training Records: {len(X_train)}")
-    print(f"Testing Records: {len(X_test)}")
-
-    print(f"\nTraining Features: {X_train_tfidf.shape}")
-    print(f"Testing Features: {X_test_tfidf.shape}")
-
-    print(f"\nAccuracy: {accuracy:.4f}")
-
-    print("\nClassification Report:")
-    print(classification_report(y_test, y_pred))
-
-
-    # ========================================================
-    # CONFIDENCE ANALYSIS
-    # ========================================================
-
-    analyze_test_confidence()
-
-
-    # ========================================================
-    # MANUAL TESTING
-    # ========================================================
-
-    test_messages = [
-
-        "Where is my package?",
-
-        "I need my money back",
-
-        "My card payment did not work",
-
-        "Hello there",
-
-        "I want to cancel my order",
-
-        "Thank you for your help",
-
-        "Tell me about this item",
-
-        "Can you help me?",
-
-        "What is quantum physics?",
-
-        "What is the weather today?",
-
-        "Tell me a joke",
-
-        "How are you?",
-
-        "Who are you?",
-
-        "I have a problem",
-
-        "My order is late",
-
-        "My card isn't working",
-
-        "I want my money back",
-
-        "What products do you sell?"
-    ]
-
-
-    print("\n" + "=" * 60)
-    print("MANUAL INTENT TESTS")
-    print("=" * 60)
-
-
-    for message in test_messages:
-
-        (
-            final_intent,
-            confidence,
-            second_intent,
-            second_confidence,
-            margin
-        ) = predict_intent_details(message)
-
-        print(f"\nMessage: {message}")
-
-        print(f"Final Intent: {final_intent}")
-
-        print(
-            f"Top Confidence: "
-            f"{confidence:.2%}"
-        )
-
-        print(f"Second Intent: {second_intent}")
-
-        print(
-            f"Second Confidence: "
-            f"{second_confidence:.2%}"
-        )
-
-        print(
-            f"Confidence Margin: "
-            f"{margin:.2%}"
-        )
+    # Keep rejection for uncertain questions that

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Conversation Insights | {{ app_name }}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script defer
+            src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+
+<body data-page="insights">
+
+{% include "_nav.html" %}
+
+<main class="shell">
+
+    <header class="page-head">
+        <div>
+            <p class="eyebrow">WORKSPACE / CONVERSATION INSIGHTS</p>
+            <h1>Understand every message</h1>
+            <p>Review how your chatbot interpreted the latest message.</p>
+        </div>
+
+        <a class="button primary" href="/assistant">
+            Go to AI Assistant →
+        </a>
+    </header>
+
+    <section id="noInsights" class="card empty-insights">
+        <div class="bot-icon">✳</div>
+        <h2>No message insights yet</h2>
+        <p>Send a message in AI Assistant first. Its analysis will appear here.</p>
+        <a class="button primary" href="/assistant">Start a conversation</a>
+    </section>
+
+    <div id="insightsContent" class="hidden">
+
+        <section class="kpis">
+
+            <article class="card">
+                <label>Detected intent</label>
+                <strong id="insightIntent">—</strong>
+                <small id="insightTopic">Topic</small>
+            </article>
+
+            <article class="card">
+                <label>Intent confidence</label>
+                <strong id="insightConfidence">—</strong>
+                <div class="progress">
+                    <div id="confidenceBar"></div>
+                </div>
+            </article>
+
+            <article class="card">
+                <label>Sentiment</label>
+                <strong id="insightSentiment">—</strong>
+                <small id="sentimentDescription">Message sentiment</small>
+            </article>
+
+            <article class="card">
+                <label>Response time</label>
+                <strong id="insightResponseTime">—</strong>
+                <small>Time taken to process the message</small>
+            </article>
+
+        </section>
+
+        <section class="two-col">
+
+            <article class="card">
+                <h2>Latest message</h2>
+                <p class="muted">Message sent to the chatbot</p>
+                <div id="latestMessage" class="latest-message">—</div>
+                <p class="muted" id="latestTime">—</p>
+            </article>
+
+            <article class="card">
+                <h2>Alternative intent</h2>
+                <p class="muted">Second-most likely predicted intent</p>
+
+                <div class="alternative-intent">
+                    <strong id="insightSecondIntent">—</strong>
+                    <span id="insightSecondConfidence">—</span>
+                </div>
+
+                <p class="muted">
+                    Confidence margin:
+                    <strong id="insightMargin">—</strong>
+                </p>
+            </article>
+
+        </section>
+
+        <section class="two-col">
+
+            <article class="card">
+                <h2>Named entities</h2>
+                <p class="muted">
+                    Entities returned by your extraction pipeline
+                </p>
+
+                <div id="insightEntities" class="entity-list">
+                    No entities returned for this message.
+                </div>
+            </article>
+
+            <article class="card">
+                <h2>API status</h2>
+                <p class="muted">Backend response status</p>
+
+                <div class="api-status">
+                    <span class="status-dot"></span>
+                    <strong id="insightApiStatus">Waiting</strong>
+                </div>
+
+                <p class="muted">
+                    If a request fails, check the Flask terminal for errors.
+                </p>
+            </article>
+
+        </section>
+
+    </div>
+
+    <footer>Dynamic AI Chatbot · Zidio Internship</footer>
+
+</main>
+</body>
+</html>

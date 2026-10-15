@@ -1,23 +1,40 @@
 import re
-import pandas as pd
 
+# ============================================================
+# TEXT CLEANING
+# ============================================================
 
 def clean_text(text):
     """
-    Clean user text for machine learning.
+    Clean and normalize user text.
+
+    The preprocessing keeps:
+    - letters
+    - numbers
+    - spaces
+    - hyphens
+
+    Hyphens are important for medical terms such as:
+    COVID-19
+    25-hydroxyvitamin
     """
 
-    # Convert to string
     text = str(text)
 
     # Convert to lowercase
     text = text.lower()
 
-    # Remove extra spaces
-    text = re.sub(r"\s+", " ", text)
+    # Replace slash with a space
+    text = text.replace("/", " ")
 
-    # Remove punctuation
-    text = re.sub(r"[^\w\s]", "", text)
+    # Keep letters, numbers, spaces, and hyphens
+    text = re.sub(r"[^a-z0-9\s-]", " ", text)
+
+    # Normalize repeated hyphens
+    text = re.sub(r"-{2,}", "-", text)
+
+    # Normalize whitespace
+    text = re.sub(r"\s+", " ", text)
 
     # Remove leading/trailing spaces
     text = text.strip()
@@ -25,29 +42,76 @@ def clean_text(text):
     return text
 
 
-def load_and_clean_dataset(file_path):
+# ============================================================
+# TOKENIZATION
+# ============================================================
+
+def tokenize_text(text):
     """
-    Load intents dataset and clean the text column.
+    Convert cleaned text into a list of tokens.
+
+    Hyphenated medical terms remain as one token.
     """
 
-    df = pd.read_csv(file_path)
+    cleaned_text = clean_text(text)
 
-    # Clean text
-    df["clean_text"] = df["text"].apply(clean_text)
+    if not cleaned_text:
+        return []
 
-    return df
+    tokens = re.findall(
+        r"\b[a-z0-9]+(?:-[a-z0-9]+)*\b",
+        cleaned_text
+    )
 
+    return tokens
+
+
+# ============================================================
+# NORMALIZATION
+# ============================================================
+
+def normalize_text(text):
+    """
+    Return normalized text using the cleaning pipeline.
+    """
+
+    return clean_text(text)
+
+
+# ============================================================
+# TESTING
+# ============================================================
 
 if __name__ == "__main__":
 
-    file_path = "data/raw/intents.csv"
+    test_messages = [
+        "What are the symptoms of Diabetes?",
+        "What is COVID-19?",
+        "Tell me about Acid Reflux / GERD.",
+        "I have a headache!!!",
+        "How can I prevent kidney stones?",
+        "What are the symptoms of Vitamin D deficiency?",
+        "Can anxiety affect my sleep?"
+    ]
 
-    df = load_and_clean_dataset(file_path)
+    print("=" * 60)
+    print("MEDICAL NLP PREPROCESSING TEST")
+    print("=" * 60)
 
-    print("\nDataset loaded successfully.")
+    for message in test_messages:
 
-    print("\nOriginal text:")
-    print(df["text"].head(10))
+        cleaned = clean_text(message)
+        tokens = tokenize_text(message)
 
-    print("\nCleaned text:")
-    print(df["clean_text"].head(10))
+        print("\nOriginal:")
+        print(message)
+
+        print("Cleaned:")
+        print(cleaned)
+
+        print("Tokens:")
+        print(tokens)
+
+    print("\n" + "=" * 60)
+    print("PREPROCESSING TEST COMPLETED")
+    print("=" * 60)
