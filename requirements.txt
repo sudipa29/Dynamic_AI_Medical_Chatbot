@@ -13,3 +13,4 @@ markdown
 bleach
 requests
 pytest
+gunicorn
